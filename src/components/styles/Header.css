@@ -1,0 +1,125 @@
+/* Header Component Styles */
+.header {
+  background: white;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+}
+
+.logo-section {
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  transition: color 250ms ease-in-out;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  font-weight: var(--font-weight-semibold);
+}
+
+.nav-link:hover {
+  color: #0046b6;
+}
+
+.nav-link.active {
+  color: #0046b6;
+  font-weight: 600;
+}
+
+.mobile-menu-btn {
+  display: none;
+  border: none !important;
+  font-size: 1.5rem !important;
+  padding: 0.5rem !important;
+  font-weight: 800;
+  width: 4rem !important;
+}
+
+.mobile-menu-btn:hover {
+  /* background: none !important; */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    min-height: 10vh;
+  }
+
+  .header-content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    gap: 0;
+    backdrop-filter: blur(9px) saturate(65%);
+    -webkit-backdrop-filter: blur(5px) saturate(65%);
+    background-color: #d4d4d442;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    background-image: radial-gradient(at 71% -9%, #0c55d5d1 0, #2196f300 52%),
+      radial-gradient(at 27% 9%, hsl(254deg 0% 100% / 73%) 0, transparent 40%);
+  }
+
+  .nav-menu.mobile-open {
+    display: flex;
+    position: absolute;
+    top: 0;
+    /* left: 0;
+    right: 0;
+    z-index: 1000; */
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: #c9c9c9;
+    border-radius: 14px;
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .nav-menu.mobile-open {
+    margin-top: 3.5rem;
+  }
+}

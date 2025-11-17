@@ -1,0 +1,163 @@
+/* Project Carousel Section */
+.project-carousel-section {
+  padding: 5rem 2rem;
+  background: #f7f8f9;
+}
+
+.project-carousel-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.carousel-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.carousel-headlines {
+  position: relative;
+}
+
+.carousel-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.carousel-title .text-blue {
+  color: #0066ff;
+}
+
+/* Carousel Styling */
+.project-carousel {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-image-wrapper {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PrimeReact Carousel Customization */
+.project-carousel .p-carousel-content {
+  background: transparent;
+  margin-top: 2rem;
+}
+
+.project-carousel .p-carousel-indicators {
+  padding: 1.5rem 0;
+}
+
+.project-carousel .p-carousel-indicator button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 102, 255, 0.3);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.project-carousel .p-carousel-prev,
+.project-carousel .p-carousel-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0066ff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin: 0 1rem;
+}
+
+.project-carousel .p-carousel-prev:hover,
+.project-carousel .p-carousel-next:hover {
+  background: #0066ff;
+  color: white;
+  transform: scale(1.1);
+}
+
+.project-carousel .p-carousel-prev:disabled,
+.project-carousel .p-carousel-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.project-carousel .p-carousel-prev .p-icon,
+.project-carousel .p-carousel-next .p-icon {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .project-carousel-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .carousel-title {
+    font-size: 2rem;
+  }
+
+  .carousel-image-wrapper {
+    height: 450px;
+  }
+
+  .carousel-headlines .headline-bg {
+    font-size: 2.5rem;
+  }
+
+  .carousel-headlines .headline-fg {
+    font-size: 0.9rem;
+  }
+
+  .project-carousel .p-carousel-prev,
+  .project-carousel .p-carousel-next {
+    width: 40px;
+    height: 40px;
+    margin: 0 0.5rem;
+  }
+
+  .project-carousel .p-carousel-prev .p-icon,
+  .project-carousel .p-carousel-next .p-icon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-carousel-section {
+    padding: 3rem 1rem;
+  }
+
+  .carousel-title {
+    font-size: 1.75rem;
+  }
+
+  .carousel-image-wrapper {
+    height: 350px;
+  }
+
+  .carousel-headlines .headline-bg {
+    font-size: 2rem;
+  }
+
+  .project-carousel .p-carousel-prev,
+  .project-carousel .p-carousel-next {
+    width: 35px;
+    height: 35px;
+  }
+}

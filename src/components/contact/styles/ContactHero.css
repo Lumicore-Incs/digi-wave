@@ -1,0 +1,53 @@
+.contact-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 350px;
+  background-image: url('/images/hero-background-2.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-hero-content {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.contact-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.contact-hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 768px) {
+  .contact-hero-title {
+    font-size: 2rem;
+  }
+
+  .contact-hero-subtitle {
+    font-size: 1rem;
+  }
+}

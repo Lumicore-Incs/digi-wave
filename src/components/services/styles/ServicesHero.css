@@ -1,0 +1,60 @@
+.services-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 350px;
+  background-image: url('/services/services-background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(21, 56, 133, 0.3318) 0%,
+    rgba(21, 56, 133, 0.79) 32.09%,
+    rgba(21, 56, 133, 0.79) 48.3%,
+    rgba(21, 56, 133, 0.79) 67.61%,
+    rgba(37, 99, 235, 0.3397) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-hero-content {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.services-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.services-hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 768px) {
+  .services-hero-title {
+    font-size: 2rem;
+  }
+
+  .services-hero-subtitle {
+    font-size: 1rem;
+  }
+}

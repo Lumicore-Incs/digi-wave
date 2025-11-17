@@ -1,0 +1,144 @@
+/* About Component Styles */
+.about-section {
+  position: relative;
+  background: #fff;
+  padding: 4rem 0 3rem 0;
+  min-height: 60vh;
+  z-index: 1;
+}
+
+.about-bg-text {
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e6e6e6;
+  opacity: 0.35;
+  letter-spacing: 1px;
+  z-index: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.about-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-headline {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #222;
+}
+.about-headline-bold {
+  color: #222;
+}
+.about-headline-highlight {
+  color: #0046b6;
+}
+
+.about-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 700px) {
+  .about-features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.about-feature-card {
+  background: none;
+  box-shadow: none;
+  border-radius: 12px;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.about-feature-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem auto;
+  background: #e6f0ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.about-feature-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.about-feature-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.about-feature-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  transition: transform 250ms ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.service-description {
+  color: #666666;
+  line-height: 1.6;
+}

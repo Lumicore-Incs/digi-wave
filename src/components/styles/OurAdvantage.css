@@ -1,0 +1,148 @@
+.step-item.active .step-icon-bg {
+  box-shadow: 0 4px 16px rgba(21, 87, 193, 0.18);
+}
+.step-item.active .step-icon-inner {
+  filter: brightness(1.2);
+}
+.step-item {
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+/* OurAdvantage.css - styles for OurAdvantage section */
+
+.our-advantage-section {
+  width: 100%;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: center;
+}
+.our-advantage-content {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.our-advantage-headline {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 8px;
+  position: relative;
+}
+.our-advantage-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.featured-work {
+  color: #1557c1;
+}
+.our-advantage-steps {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.steps-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+  position: relative;
+}
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.step-icon-bg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.step-icon-bg-0 {
+  border: 2px solid #1557c1;
+}
+.step-icon-bg-1 {
+  border: 2px solid #ffb300;
+}
+.step-icon-bg-2 {
+  background: #fff;
+  border: 2px solid #e94e77;
+}
+
+.step-item.active .step-icon-bg-0 {
+  background: #c0cffb;
+}
+.step-item.active .step-icon-bg-1 {
+  background: #f9efd7;
+}
+.step-item.active .step-icon-bg-2 {
+  background: #ffd7d7;
+}
+.step-icon-inner {
+  font-size: 1.7rem;
+  color: #fff;
+}
+.step-connector {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100px;
+  height: 3px;
+  background: #e0e7ef;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+.our-advantage-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+.our-advantage-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.our-advantage-desc-head {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+.our-advantage-desc-text {
+  color: #7a859e;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+.our-advantage-image-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.our-advantage-image {
+  border-radius: 16px;
+  max-width: 320px;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .our-advantage-row {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}

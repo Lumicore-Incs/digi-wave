@@ -1,0 +1,67 @@
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Button } from 'primereact/button';
+import { useState } from 'react';
+import './styles/Header.css';
+
+export default function Header() {
+  const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const getNavLinkClass = (path) => {
+    return `nav-link ${pathname === path ? 'active' : ''}`;
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  return (
+    <header className="header">
+      <div className="header-content">
+        <div className="logo-section">
+          <Image src="/images/logo-blue.png" alt="DigiWave Logo" width={180} height={60} />
+        </div>
+
+        <nav className={`nav-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <Link href="/" className={getNavLinkClass('/')} onClick={closeMobileMenu}>
+            Home
+          </Link>
+          <Link href="/about" className={getNavLinkClass('/about')} onClick={closeMobileMenu}>
+            About Us
+          </Link>
+          <Link href="/services" className={getNavLinkClass('/services')} onClick={closeMobileMenu}>
+            Our Services
+          </Link>
+          <Link
+            href="/our-advantage"
+            className={getNavLinkClass('/our-advantage')}
+            onClick={closeMobileMenu}
+          >
+            Our Advantage
+          </Link>
+          <Link href="/our-work" className={getNavLinkClass('/our-work')} onClick={closeMobileMenu}>
+            Our Work
+          </Link>
+          <Link href="/contact" className={getNavLinkClass('/contact')} onClick={closeMobileMenu}>
+            Contact Us
+          </Link>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <Button
+          icon={isMobileMenuOpen ? 'pi pi-times' : 'pi pi-bars'}
+          className="mobile-menu-btn"
+          aria-label="Menu"
+          onClick={toggleMobileMenu}
+        />
+      </div>
+    </header>
+  );
+}

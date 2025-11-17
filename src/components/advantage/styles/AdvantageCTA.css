@@ -1,0 +1,60 @@
+.advantage-cta-section {
+  padding: 5rem 2rem;
+  background: white;
+  text-align: center;
+}
+
+.advantage-cta-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.advantage-headlines {
+  position: relative;
+  width: 100%;
+}
+.advantage-headlines .headline-bg {
+  width: 100%;
+}
+
+.advantage-cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.text-blue {
+  color: #0066ff;
+}
+
+.advantage-cta-button {
+  background: linear-gradient(90deg, #0046b6 0%, #00ceff 100%);
+  border: none !important;
+  padding: 1rem 2.5rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 14px !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.advantage-cta-button:hover {
+  background: linear-gradient(90deg, #0062ff 0%, #30cef6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .advantage-cta-title {
+    font-size: 1.75rem;
+  }
+
+  .advantage-cta-button {
+    width: 100%;
+  }
+}
