@@ -22,9 +22,9 @@ const advantageSteps = [
   {
     label: 'Music Events',
     icon: '/images/our-advantage-icons-3.png',
-    image: '/images/project-images-2.jpg',
+    image: '/our-work/our-work-images-9.jpg',
     head: '“ යුග යාත්‍රා “ LIVE in Concert',
-    text: 'We built a strong narrative around “යුග යාත්‍රා“, using digital media to reach targeted audiences and creating buzz through a focused PR campaign—radio spots, preview articles, and a dynamic social media countdown that captured the spirit of this musical journey.',
+    text: 'We crafted a powerful narrative around the event, leveraging digital advertising to target specific demographics and executing a PR blitz that included radio interviews, preview articles, and strategic social media countdowns.',
   },
 ];
 
