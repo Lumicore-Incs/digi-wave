@@ -144,6 +144,23 @@ export default function ParticleAnimation() {
     const context = canvasEl.getContext('2d');
     let { width, height } = canvasEl;
 
+    // Helper function to get responsive settings
+    const getResponsiveSettings = (currentWidth) => {
+      const isMobile = currentWidth <= 768;
+      const isTablet = currentWidth > 768 && currentWidth <= 1024;
+      
+      return {
+        isMobile,
+        isTablet,
+        blockSize: isMobile ? 6 : isTablet ? 5 : 4,
+        maxSize: isMobile ? 2.5 : 3,
+        maxOffsetX: isMobile ? 30 : 40,
+        maxOffsetY: isMobile ? 8 : 10,
+        fontSize: isMobile ? 50 : isTablet ? 65 : 80,
+        repulsorMass: isMobile ? -400 : -600,
+      };
+    };
+
     const resize = () => {
       const { innerHeight, innerWidth } = window;
       canvasEl.width = innerWidth;
@@ -155,14 +172,14 @@ export default function ParticleAnimation() {
     window.addEventListener('resize', resize);
     resize();
 
+    // Get initial responsive settings
+    const responsiveSettings = getResponsiveSettings(width);
+    const { blockSize: BLOCK_SIZE, maxSize: MAX_SIZE, maxOffsetX: MAX_OFFSET_X, maxOffsetY: MAX_OFFSET_Y, fontSize } = responsiveSettings;
+    
     const MAX_DISTANCE = 200;
-    const BLOCK_SIZE = 4;
     const BYTE_OFFSET = 4;
-    const MAX_SIZE = 3;
-    const MAX_OFFSET_X = 40;
-    const MAX_OFFSET_Y = 10;
 
-    const texture = getTextTexture('DIGI  WAVE', 80);
+    const texture = getTextTexture('DIGI  WAVE', fontSize);
     const center = {
       x: width / 2,
       y: height / 2,
@@ -176,8 +193,8 @@ export default function ParticleAnimation() {
       radius: 0,
       damping: 0,
     });
-    // Always active - full repulsion
-    repulsor.mass = -600;
+    // Responsive repulsion - less on mobile for better performance
+    repulsor.mass = responsiveSettings.repulsorMass;
     repulsorRef.current = repulsor;
 
     for (let i = 0; i < texture.width / BLOCK_SIZE; i++) {
@@ -228,7 +245,18 @@ export default function ParticleAnimation() {
       }
     };
 
+    const handleTouchMove = (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      if (touch && repulsorRef.current) {
+        const rect = canvasEl.getBoundingClientRect();
+        repulsorRef.current.position.x = touch.clientX - rect.left;
+        repulsorRef.current.position.y = touch.clientY - rect.top;
+      }
+    };
+
     canvasEl.addEventListener('mousemove', handleMouseMove);
+    canvasEl.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     const step = () => {
       const { width, height } = canvasEl;
@@ -270,6 +298,7 @@ export default function ParticleAnimation() {
     return () => {
       window.removeEventListener('resize', resize);
       canvasEl.removeEventListener('mousemove', handleMouseMove);
+      canvasEl.removeEventListener('touchmove', handleTouchMove);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }

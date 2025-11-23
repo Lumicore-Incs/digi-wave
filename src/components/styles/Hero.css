@@ -143,6 +143,27 @@
   opacity: 0.95;
 }
 
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .particle-canvas {
+    opacity: 0.8;
+  }
+  
+  .particle-mask {
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 480px) {
+  .particle-canvas {
+    opacity: 0.7;
+  }
+  
+  .particle-mask {
+    opacity: 0.2;
+  }
+}
+
 /* Color Mask Overlay */
 .particle-mask {
   position: absolute;
