@@ -1,6 +1,6 @@
 'use client';
-import { useState } from 'react';
 import Image from 'next/image';
+import { useState } from 'react';
 import './styles/ImageLoader.css';
 
 export default function ImageLoader({ src, alt, width, height, className = '', priority = false }) {
