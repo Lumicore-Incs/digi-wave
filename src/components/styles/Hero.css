@@ -50,12 +50,54 @@
   gap: 1rem;
 }
 
-@media (max-width: 640px) {
-  .hero-container {
-    margin-top: 10rem;
+@media (max-width: 768px) {
+  .hero-overlay {
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 3rem;
   }
+  
+  .hero-container {
+    width: 90vw;
+    margin-top: 0;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
   .cta-buttons {
     flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-overlay {
+    padding-bottom: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
   }
 }
 
