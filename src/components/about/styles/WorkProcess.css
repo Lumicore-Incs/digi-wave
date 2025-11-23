@@ -171,6 +171,9 @@
   .work-process-headlines .headline-bg {
     font-size: 2.5rem;
   }
+  .process-step {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 640px) {

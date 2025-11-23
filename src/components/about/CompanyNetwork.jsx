@@ -101,6 +101,7 @@ export default function CompanyNetwork() {
 
         <div className="org-chart-wrapper">
           <OrganizationChart value={data} nodeTemplate={nodeTemplate} />
+          <span className="org-chart-line"></span>
         </div>
       </div>
     </section>

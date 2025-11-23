@@ -69,17 +69,22 @@
   .hero-title {
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
+    word-spacing: 9999px;
+    text-align: center;
   }
 
   .hero-subtitle {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .cta-buttons {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   .cta-buttons .btn {

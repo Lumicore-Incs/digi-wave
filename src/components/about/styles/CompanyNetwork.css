@@ -174,19 +174,51 @@
     font-size: 0.9rem;
   }
 
-  .org-chart-wrapper .p-organizationchart {
+  .org-chart-wrapper {
+    padding: 1rem 0;
+  }
+
+  .org-chart-wrapper .p-organizationchart-table {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 2rem;
+  }
+
+  .org-chart-wrapper .p-organizationchart-lines,
+  .org-chart-wrapper .p-organizationchart-line-down,
+  .org-chart-wrapper .p-organizationchart-line-left,
+  .org-chart-wrapper .p-organizationchart-line-right,
+  .org-chart-wrapper .p-organizationchart-line-top {
+    display: none !important;
   }
 
   .company-node-content {
-    min-width: 200px;
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .division-container {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .division-title {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
   }
 
   .division-node-content {
-    min-width: 100%;
-    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .division-list {
+    gap: 0.5rem;
+  }
+
+  .division-list li {
+    font-size: 0.85rem;
   }
 }
 
@@ -197,13 +229,37 @@
 
   .network-title {
     font-size: 1.75rem;
+    line-height: 1.4;
   }
 
   .network-subtitle-headline .headline-bg {
     font-size: 2rem;
   }
 
-  .org-chart-wrapper {
-    padding: 1rem 0;
+  .company-node-content {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .company-name {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .division-title {
+    padding: 0.9rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .division-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .division-node-content {
+    padding: 1.25rem;
+  }
+
+  .division-list li {
+    font-size: 0.8rem;
+    padding-left: 1rem;
   }
 }

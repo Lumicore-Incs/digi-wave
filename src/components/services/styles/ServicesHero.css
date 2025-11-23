@@ -50,11 +50,37 @@
 }
 
 @media (max-width: 768px) {
+  .services-hero {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .services-hero-content {
+    padding: 1.5rem;
+  }
+
   .services-hero-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    padding-top: 2rem;
   }
 
   .services-hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .services-hero-subtitle br {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero-title {
+    font-size: 1.35rem;
+    line-height: 1.4;
+  }
+
+  .services-hero-subtitle {
+    font-size: 0.9rem;
   }
 }
