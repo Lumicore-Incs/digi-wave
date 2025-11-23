@@ -2,6 +2,7 @@
 
 import { Button } from 'primereact/button';
 import { useEffect, useState } from 'react';
+import ParticleAnimation from './ParticleAnimation';
 import './styles/Hero.css';
 
 export default function Hero() {
@@ -31,6 +32,7 @@ export default function Hero() {
         className={`hero-bg ${fade ? 'fade-in' : 'fade-out'}`}
         style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
       ></div>
+      <ParticleAnimation />
       <div className="hero-overlay">
         <div className="hero-container">
           <div className="hero-content" data-aos="fade-up">
