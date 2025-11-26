@@ -122,7 +122,24 @@
   font-size: 0.9rem;
   color: black;
   position: relative;
-  padding-left: 1.2rem;
+  padding: 0.5rem 0.75rem 0.5rem 1.2rem;
+  background: rgba(168, 141, 141, 0.151);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.division-list li::before {
+  content: '▸ ';
+  position: absolute;
+  left: 0.5rem;
+  color: inherit;
+  font-weight: bold;
+}
+
+.division-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
 }
 /* 
 /* PrimeReact OrganizationChart Customization */
@@ -152,12 +169,11 @@
   }
 
   .division-node-content {
-    min-width: 220px;
     max-width: 240px;
   }
 }
 
-@media (max-width: 968px) {
+@media (max-width: 425px) {
   .company-network-section {
     padding: 4rem 1.5rem;
   }
@@ -176,41 +192,86 @@
 
   .org-chart-wrapper {
     padding: 1rem 0;
+    overflow-x: visible;
+  }
+
+  /* Force vertical stacking of all nodes */
+  .org-chart-wrapper .p-organizationchart {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 
   .org-chart-wrapper .p-organizationchart-table {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .org-chart-wrapper .p-organizationchart tbody {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .org-chart-wrapper .p-organizationchart tr {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;  }
+
+    .org-chart-wrapper {
+    padding-bottom: 2rem;
+  }
+  
+  .org-chart-wrapper .p-organizationchart td {
+    width: 100% !important;
   }
 
+  /* Ensure children row stacks vertically */
+  .org-chart-wrapper .p-organizationchart tr:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Hide all connecting lines */
   .org-chart-wrapper .p-organizationchart-lines,
   .org-chart-wrapper .p-organizationchart-line-down,
   .org-chart-wrapper .p-organizationchart-line-left,
   .org-chart-wrapper .p-organizationchart-line-right,
-  .org-chart-wrapper .p-organizationchart-line-top {
+  .org-chart-wrapper .p-organizationchart-line-top,
+  .org-chart-line {
     display: none !important;
+    visibility: hidden !important;
   }
 
   .company-node-content {
-    min-width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
   }
 
   .division-container {
-    min-width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
     margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .division-node-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
   }
 
   .division-title {
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
-  }
-
-  .division-node-content {
-    padding: 1.5rem;
   }
 
   .division-list {

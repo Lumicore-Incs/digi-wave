@@ -5,18 +5,22 @@ import Testimonials from '@/components/work/Testimonials';
 import WorkCTA from '@/components/work/WorkCTA';
 import WorkHero from '@/components/work/WorkHero';
 import WorkStats from '@/components/work/WorkStats';
+import PageLoader from '@/components/PageLoader';
 
 export default function OurWorkPage() {
   return (
-    <main>
-      <Header />
-      <WorkHero />
-      {/* <ProjectShowcase /> */}
-      <ProjectShowcaseCarosal />
-      <WorkStats />
-      <Testimonials />
-      <WorkCTA />
-      <Footer />
-    </main>
+    <>
+      <PageLoader />
+      <main>
+        <Header />
+        <WorkHero />
+        {/* <ProjectShowcase /> */}
+        <ProjectShowcaseCarosal />
+        <WorkStats />
+        <Testimonials />
+        <WorkCTA />
+        <Footer />
+      </main>
+    </>
   );
 }

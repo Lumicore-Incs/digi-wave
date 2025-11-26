@@ -11,7 +11,7 @@ export default function CompanyNetwork() {
       className: 'company-node',
       data: {
         logo: '/images/logo-wickramanayake-holdings.jpg',
-        name: 'Wikramanakye Holdings Pvt (LTD)',
+        name: 'Wickramanayake Holdings (PVT) LTD',
       },
       children: [
         {
