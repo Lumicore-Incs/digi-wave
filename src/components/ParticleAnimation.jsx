@@ -179,7 +179,7 @@ export default function ParticleAnimation() {
     const MAX_DISTANCE = 200;
     const BYTE_OFFSET = 4;
 
-    const texture = getTextTexture('DIGI  WAVE', fontSize);
+    const texture = getTextTexture('DIGIWAVE', fontSize);
     const center = {
       x: width / 2,
       y: height / 2,

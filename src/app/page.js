@@ -7,19 +7,23 @@ import OurAdvantage from '@/components/OurAdvantage';
 import Services from '@/components/Services';
 import TeamSection from '@/components/TeamSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import PageLoader from '@/components/PageLoader';
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <OurAdvantage />
-      <BrandLogos />
-      <TeamSection />
-      <WhyChooseUs />
-      <Footer />
-    </main>
+    <>
+      <PageLoader />
+      <main>
+        <Header />
+        <Hero />
+        <About />
+        <Services />
+        <OurAdvantage />
+        <BrandLogos />
+        <TeamSection />
+        <WhyChooseUs />
+        <Footer />
+      </main>
+    </>
   );
 }
