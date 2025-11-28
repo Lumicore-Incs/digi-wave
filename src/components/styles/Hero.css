@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
 }
 
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -21,6 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .hero-container {
@@ -48,6 +50,14 @@
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
+  position: relative;
+  z-index: 999;
+}
+
+.cta-buttons .btn {
+  position: relative;
+  z-index: 999;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -198,6 +208,18 @@
 
   .particle-mask {
     opacity: 0.25;
+    animation: mask-pulse-mobile 12s ease-in-out infinite;
+  }
+}
+
+@keyframes mask-pulse-mobile {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0.35;
   }
 }
 
@@ -214,10 +236,11 @@
 /* Color Mask Overlay */
 .particle-mask {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
   background: #1581bf;
   opacity: 0.3;
   z-index: 1;
@@ -237,4 +260,16 @@
     rgba(0, 0, 0, 0) 100%
   );
   pointer-events: none;
+  animation: mask-pulse 8s ease-in-out infinite;
+}
+
+@keyframes mask-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.4;
+  }
 }
