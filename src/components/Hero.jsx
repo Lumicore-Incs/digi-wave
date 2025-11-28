@@ -1,11 +1,14 @@
 'use client';
 
 import { Button } from 'primereact/button';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import ParticleAnimation from './ParticleAnimation';
 import './styles/Hero.css';
 
 export default function Hero() {
+  const router = useRouter();
+  
   // Background images for rotation
   const bgImages = [
     '/images/hero-background-1.jpg',
@@ -39,8 +42,16 @@ export default function Hero() {
             <h1 className="hero-title">Innovation in Every Wave</h1>
             <p className="hero-subtitle">who you are, what you do.</p>
             <div className="cta-buttons">
-              <Button label="Get In Touch" className="btn btn-primary" />
-              <Button label="Contact Us" className="btn btn-secondary" />
+              <Button 
+                label="Get In Touch" 
+                className="btn btn-primary" 
+                onClick={() => router.push('/about')}
+              />
+              <Button 
+                label="Contact Us" 
+                className="btn btn-secondary" 
+                onClick={() => router.push('/contact')}
+              />
             </div>
           </div>
         </div>
