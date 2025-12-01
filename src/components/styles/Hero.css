@@ -66,7 +66,7 @@
   .hero-overlay {
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
   }
 
   .hero-container {
@@ -76,6 +76,7 @@
 
   .hero-content {
     text-align: center;
+    padding-bottom: 4rem;
   }
 
   .hero-title {
@@ -106,7 +107,7 @@
 
 @media (max-width: 640px) {
   .hero-overlay {
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
   }
 
   .hero-title {
@@ -205,6 +206,11 @@
 
 /* Mobile optimizations */
 @media (max-width: 768px) {
+  .particle-animation-wrapper {
+    margin-top: -4rem;
+    height: 60%;
+  }
+
   .particle-canvas {
     opacity: 0.8;
   }
