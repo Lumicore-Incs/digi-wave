@@ -167,76 +167,81 @@ export default function ParticleAnimation() {
       canvasEl.height = innerHeight;
       width = innerWidth;
       height = innerHeight;
+      
+      // Recreate particles on resize for responsiveness
+      initParticles();
+    };
+
+    const initParticles = () => {
+      // Get responsive settings
+      const responsiveSettings = getResponsiveSettings(width);
+      const { blockSize: BLOCK_SIZE, maxSize: MAX_SIZE, maxOffsetX: MAX_OFFSET_X, maxOffsetY: MAX_OFFSET_Y, fontSize } = responsiveSettings;
+      
+      const MAX_DISTANCE = 200;
+      const BYTE_OFFSET = 4;
+
+      const texture = getTextTexture('DIGIWAVE', fontSize);
+      const center = {
+        x: width / 2,
+        y: height / 2,
+      };
+
+      const radius = texture.width / 2;
+      const particles = [];
+
+      const repulsor = new Particle({
+        position: { x: center.x - 50, y: center.y - 10 },
+        radius: 0,
+        damping: 0,
+      });
+      // Responsive repulsion - less on mobile for better performance
+      repulsor.mass = responsiveSettings.repulsorMass;
+      repulsorRef.current = repulsor;
+
+      for (let i = 0; i < texture.width / BLOCK_SIZE; i++) {
+        for (let j = 0; j < texture.height / BLOCK_SIZE; j++) {
+          const offset =
+            Math.floor(
+              j * BLOCK_SIZE * texture.width + i * BLOCK_SIZE + BLOCK_SIZE / 2
+            ) * BYTE_OFFSET;
+
+          if (texture.data[offset]) {
+            const radius = MAX_SIZE / 2 + (Math.random() * MAX_SIZE) / 2;
+            // Always active - dynamic stiffness
+            const stiffness = 0.002 + Math.random() * 0.05;
+            const damping = 0.01 + Math.random() * 0.1;
+            const angle = Math.random() * PI_DOUBLE;
+            const distance = Math.random() * MAX_DISTANCE;
+
+            const center = {
+              x: i * BLOCK_SIZE + (width - texture.width) / 2,
+              y: j * BLOCK_SIZE + (height - texture.height) / 2,
+            };
+
+            const position = {
+              x: center.x + (Math.random() - Math.random()) * MAX_OFFSET_X,
+              y: center.y + (Math.random() - Math.random()) * MAX_OFFSET_Y,
+            };
+
+            const particle = new Spring({
+              position,
+              radius,
+              center,
+              stiffness,
+              damping,
+            });
+
+            particle.gravityObjects.push(repulsor);
+            particles.push(particle);
+          }
+        }
+      }
+
+      particlesRef.current = particles;
     };
 
     window.addEventListener('resize', resize);
     resize();
-
-    // Get initial responsive settings
-    const responsiveSettings = getResponsiveSettings(width);
-    const { blockSize: BLOCK_SIZE, maxSize: MAX_SIZE, maxOffsetX: MAX_OFFSET_X, maxOffsetY: MAX_OFFSET_Y, fontSize } = responsiveSettings;
-    
-    const MAX_DISTANCE = 200;
-    const BYTE_OFFSET = 4;
-
-    const texture = getTextTexture('DIGIWAVE', fontSize);
-    const center = {
-      x: width / 2,
-      y: height / 2,
-    };
-
-    const radius = texture.width / 2;
-    const particles = [];
-
-    const repulsor = new Particle({
-      position: { x: center.x - 50, y: center.y - 10 },
-      radius: 0,
-      damping: 0,
-    });
-    // Responsive repulsion - less on mobile for better performance
-    repulsor.mass = responsiveSettings.repulsorMass;
-    repulsorRef.current = repulsor;
-
-    for (let i = 0; i < texture.width / BLOCK_SIZE; i++) {
-      for (let j = 0; j < texture.height / BLOCK_SIZE; j++) {
-        const offset =
-          Math.floor(
-            j * BLOCK_SIZE * texture.width + i * BLOCK_SIZE + BLOCK_SIZE / 2
-          ) * BYTE_OFFSET;
-
-        if (texture.data[offset]) {
-          const radius = MAX_SIZE / 2 + (Math.random() * MAX_SIZE) / 2;
-          // Always active - dynamic stiffness
-          const stiffness = 0.002 + Math.random() * 0.05;
-          const damping = 0.01 + Math.random() * 0.1;
-          const angle = Math.random() * PI_DOUBLE;
-          const distance = Math.random() * MAX_DISTANCE;
-
-          const center = {
-            x: i * BLOCK_SIZE + (width - texture.width) / 2,
-            y: j * BLOCK_SIZE + (height - texture.height) / 2,
-          };
-
-          const position = {
-            x: center.x + (Math.random() - Math.random()) * MAX_OFFSET_X,
-            y: center.y + (Math.random() - Math.random()) * MAX_OFFSET_Y,
-          };
-
-          const particle = new Spring({
-            position,
-            radius,
-            center,
-            stiffness,
-            damping,
-          });
-
-          particle.gravityObjects.push(repulsor);
-          particles.push(particle);
-        }
-      }
-    }
-
-    particlesRef.current = particles;
 
     const handleMouseMove = ({ clientX, clientY }) => {
       if (repulsorRef.current) {
@@ -274,7 +279,7 @@ export default function ParticleAnimation() {
 
         context.translate(particle.x, particle.y);
 
-        const colorScale = particle.radius / MAX_SIZE;
+        const colorScale = particle.radius / 3; // Use fixed MAX_SIZE for consistent color scaling
         context.fillStyle = getRGB([
           BASE_COLOR[0] * colorScale,
           BASE_COLOR[1],
@@ -316,4 +321,3 @@ export default function ParticleAnimation() {
     </div>
   );
 }
-
