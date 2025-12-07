@@ -156,7 +156,7 @@ export default function ParticleAnimation() {
         maxSize: isMobile ? 2.5 : 3,
         maxOffsetX: isMobile ? 30 : 40,
         maxOffsetY: isMobile ? 8 : 10,
-        fontSize: isMobile ? 90 : isTablet ? 100 : 120,
+        fontSize: isMobile ? 70 : isTablet ? 100 : 120,
         repulsorMass: isMobile ? -400 : -600,
       };
     };
