@@ -33,7 +33,7 @@ export default function About() {
 
   return (
     <section className="about-section" data-aos="fade-right">
-      <div className="relative">
+      <div className="relative team-headline">
         <div className="headline-bg">Innovate. Elevate. Excel.</div>
         <div className="headline-fg">Innovate. Elevate. Excel.</div>
       </div>

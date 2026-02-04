@@ -28,7 +28,7 @@ export default function Services() {
 
   return (
     <section id="services" className="services-section" data-aos="fade-up">
-      <div className="relative">
+      <div className="relative team-headline">
         <div className="headline-bg">Our Core Services</div>
         <div className="headline-fg">Our Core Services</div>
       </div>
