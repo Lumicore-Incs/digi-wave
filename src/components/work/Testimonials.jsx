@@ -45,7 +45,7 @@ export default function Testimonials() {
               <div className=" flex gap-3">
                 <div className="testimonial-icon">
                   <Image
-                    src="/testimonial-male.jpg"
+                    src="/images/favicon.png"
                     alt="Testimonial Icon"
                     width={50}
                     height={50}

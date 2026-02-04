@@ -2,7 +2,7 @@
 
 .hero {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,20 +11,24 @@
   background-repeat: no-repeat;
 }
 
+
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .hero-container {
   width: 80vw;
+  pointer-events: auto;
 }
 
 .hero-title {
@@ -48,14 +52,70 @@
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
+  position: relative;
+  z-index: 999;
+}
+
+.cta-buttons .btn {
+  position: relative;
+  z-index: 999;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 4rem;
+  }
+
+  .hero-container {
+    width: 90vw;
+    margin-top: 0;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    word-spacing: 9999px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 640px) {
-  .hero-container {
-    margin-top: 10rem;
+  .hero-overlay {
+    padding-bottom: 4rem;
   }
-  .cta-buttons {
-    flex-direction: column;
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
   }
 }
 
@@ -112,4 +172,116 @@
 }
 .fade-out {
   opacity: 0.7;
+}
+
+/* Particle Animation Wrapper */
+.particle-animation-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  z-index: 3;
+}
+
+/* Particle Animation Canvas */
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+  /* Blend mode for better integration */
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  /* z-index: 2; */
+}
+
+.particle-canvas:hover {
+  opacity: 0.95;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .particle-animation-wrapper {
+    margin-top: -4rem;
+    height: 60%;
+    width: 90%;
+    font-size: 5rem !important;
+
+  }
+
+  .particle-canvas {
+    opacity: 0.8;
+  }
+
+  .particle-mask {
+    opacity: 0.25;
+    animation: mask-pulse-mobile 12s ease-in-out infinite;
+  }
+}
+
+@keyframes mask-pulse-mobile {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0.35;
+  }
+}
+
+@media (max-width: 480px) {
+  .particle-canvas {
+    opacity: 0.7;
+  }
+
+  .particle-mask {
+    opacity: 0.2;
+  }
+}
+
+/* Color Mask Overlay */
+.particle-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
+  height: 200%;
+  background: #1581bf;
+  opacity: 0.3;
+  z-index: 2;
+  /* Mask effect to blend with background */
+  mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 40%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 40%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+  animation: mask-pulse 8s ease-in-out infinite;
+}
+
+@keyframes mask-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.4;
+  }
 }

@@ -11,7 +11,7 @@ export default function CompanyNetwork() {
       className: 'company-node',
       data: {
         logo: '/images/logo-wickramanayake-holdings.jpg',
-        name: 'Wikramanakye Holdings Pvt (LTD)',
+        name: 'Wickramanayake Holdings (PVT) LTD',
       },
       children: [
         {
@@ -40,14 +40,15 @@ export default function CompanyNetwork() {
             title: 'News & Media',
             subtitle: '(Our Brands)',
             items: [
-              'News 19',
-              'News Center',
-              'The Life Center',
-              'Art',
-              'Channel E',
-              'Ceylonwire',
-              'Daily Times',
-              'Wayaba.lk',
+              { name: 'News 19', icon: '/images/logos/brand-logo-1.png' },
+              { name: 'News Center', icon: '/images/logos/news.jpg' },
+              { name: 'The Life Traveler', icon: '/images/logos/travel.png' },
+              { name: 'Art', icon: '/images/logos/logo1.png' },
+              { name: 'Channel E', icon: '/images/logos/channelE.jpg' },
+              { name: 'Ceylonwire', icon: '/images/logos/Ceylonwire.jpg' },
+              { name: 'Daily Times', icon: '/images/logos/brand-logo-2.png' },
+              { name: 'Wayaba.lk', icon: '/images/logos/brand-logo-25.webp' },
+              { name: 'Rundown Podcast', icon: '/images/logos/brand-logo-4.png' },
             ],
           },
         },
@@ -77,7 +78,23 @@ export default function CompanyNetwork() {
           <div className="division-node-content">
             <ul className="division-list">
               {node.data.items.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>
+                  {typeof item === 'object' ? (
+                    <>
+                      <span className="item-icon">
+                        <Image
+                          src={item.icon}
+                          alt={item.name}
+                          width={24}
+                          height={24}
+                        />
+                      </span>
+                      <span className="item-name">{item.name}</span>
+                    </>
+                  ) : (
+                    item
+                  )}
+                </li>
               ))}
             </ul>
           </div>
@@ -101,6 +118,7 @@ export default function CompanyNetwork() {
 
         <div className="org-chart-wrapper">
           <OrganizationChart value={data} nodeTemplate={nodeTemplate} />
+          <span className="org-chart-line"></span>
         </div>
       </div>
     </section>

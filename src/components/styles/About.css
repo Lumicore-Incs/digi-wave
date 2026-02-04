@@ -7,6 +7,49 @@
   z-index: 1;
 }
 
+.about-section .relative {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.about-section .headline-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: 900;
+  color: #f0f4f8;
+  opacity: 0.4;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.about-section .headline-fg {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(135deg, #0046b6 0%, #1581BF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  letter-spacing: 2px;
+  text-align: center;
+  z-index: 1;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .about-section .headline-bg,
+  .about-section .headline-fg {
+    font-size: 2rem;
+  }
+}
+
 .about-bg-text {
   position: absolute;
   top: 2.5rem;
@@ -46,51 +89,122 @@
 .about-features-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 2.5rem;
+  padding: 0 1rem;
 }
-@media (min-width: 700px) {
+
+@media (min-width: 640px) {
+  .about-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 900px) {
   .about-features-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0;
+  }
+  
+  .about-feature-card {
+    padding: 2.5rem 1.5rem;
   }
 }
 
 .about-feature-card {
-  background: none;
-  box-shadow: none;
-  border-radius: 12px;
-  padding: 0 1rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
   text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 70, 182, 0.08);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.about-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0046b6 0%, #1581BF 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 70, 182, 0.15);
+  border-color: rgba(0, 70, 182, 0.2);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.about-feature-card:hover::before {
+  transform: scaleX(1);
 }
 
 .about-feature-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 1rem auto;
-  background: #e6f0ff;
-  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.5rem auto;
+  background: linear-gradient(135deg, #e6f0ff 0%, #d0e4ff 100%);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
+
+.about-feature-card:hover .about-feature-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #0046b6 0%, #1581BF 100%);
+  box-shadow: 0 8px 24px rgba(0, 70, 182, 0.25);
+}
+
 .about-feature-icon img {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0) saturate(100%) invert(27%) sepia(95%) saturate(2000%) hue-rotate(210deg) brightness(0.9) contrast(1.1);
+}
+
+.about-feature-card:hover .about-feature-icon img {
+  filter: brightness(0) invert(1);
+  transform: scale(1.1);
 }
 
 .about-feature-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+  line-height: 1.4;
+}
+
+.about-feature-card:hover .about-feature-title {
+  color: #0046b6;
 }
 
 .about-feature-desc {
   font-size: 0.95rem;
   color: #666;
-  line-height: 1.6;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+.about-feature-card:hover .about-feature-desc {
+  color: #444;
 }
 
 .section-header {

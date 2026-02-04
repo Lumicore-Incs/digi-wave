@@ -167,3 +167,10 @@
 .team-title-accent {
   color: #1557c1;
 }
+
+.member-role{
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 8px;
+  text-align: center;
+}

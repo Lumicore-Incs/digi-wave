@@ -128,4 +128,18 @@
   .our-story-stats {
     gap: 2rem;
   }
+
+  .story-img-02 {
+    top: 60px;
+    right: 40px;
+  }
+
+  .story-img-03 {
+    top: 145px;
+    right: 120px;
+  }
+
+  .our-story-right {
+    margin-top: 10rem;
+  }
 }

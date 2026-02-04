@@ -5,9 +5,9 @@ import './styles/TeamSection.css';
 
 const teamMembers = [
   {
-    name: 'Jayan Liyanage',
-    role: 'Operations & Event Manager',
-    img: '/images/team-member-images-1.jpeg',
+    name: 'Sachithra Wickramanayake',
+    role: 'CEO & Director',
+    img: '/images/team-member-images-3.jpeg',
   },
   {
     name: 'Praboth Udugama',
@@ -15,9 +15,9 @@ const teamMembers = [
     img: '/images/team-member-images-2.jpeg',
   },
   {
-    name: 'Sachithra Wickramanayake',
-    role: 'CEO & Director',
-    img: '/images/team-member-images-3.jpeg',
+    name: 'Jayan Liyanage',
+    role: 'Operations & Event Manager',
+    img: '/images/team-member-images-1.jpeg',
   },
   {
     name: 'Samadhi  Dassanayaka ',
