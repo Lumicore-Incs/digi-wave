@@ -249,22 +249,6 @@ export default function ServicesList() {
               </div>
             </div>
 
-            <div className="service-campaigns">
-              <h5 className="campaigns-title">Influencer Collaborations</h5>
-              <div className="service-items">
-                <div className="campaign-item">
-                  <span className="campaign-name font-bold">I LOVE YOU (2.3M followers)</span>
-                  {/* <span className="campaign-price font-color-02">Rs 45,000</span> */}
-                </div>
-                <div className="campaign-item">
-                  <span className="campaign-name font-bold">
-                    SOORA WEERA KELLO (1.5M followers)
-                  </span>
-                  {/* <span className="campaign-price font-color-02">Rs 35,000</span> */}
-                </div>
-              </div>
-            </div>
-
             <div className="service-features">
               <div className="feature-item">
                 <span className="feature-check font-color-02">✓</span>
@@ -372,35 +356,6 @@ export default function ServicesList() {
             </p>
 
             <div className="service-items">
-              <div className="service-item service-item-04 flex-column">
-                <span className="item-name-full">
-                  Create experiences that bring your brand to life.{' '}
-                </span>
-                <span
-                  className="item-name-full"
-                  style={{
-                    color: '#4B5563',
-                    fontSize: '0.8rem',
-                    marginTop: '0.25rem',
-                    marginBottom: '0.25rem',
-                  }}
-                >
-                  5 Camera Production with high-end equipment including ATEM Television Studio HD8
-                  ISO, HyperDeck Studio HD Pro, MAVIC 3 CINE Drone, and professional crew
-                </span>
-                <span className="item-name-full font-color-04" style={{ fontSize: '0.8rem' }}>
-                  Live Stream Production
-                  {/* : Rs. 500,000 (Colombo) */}
-                </span>
-                <span className="item-name-full font-color-04 " style={{ fontSize: '0.8rem' }}>
-                  Media Event Coverage
-                  {/* : Rs. 150,000 (Conditions Apply) */}
-                </span>
-                <span className="item-name-full font-color-04 " style={{ fontSize: '0.8rem' }}>
-                  Press Conference Management
-                  {/* : Rs. 180,000 */}
-                </span>
-              </div>
               <div className="check-list">
                 <span className="feature-check font-color-04">✓</span>
                 <span className="item-name-full"> End-to-end Event Planning & Execution</span>

@@ -44,20 +44,39 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-col footer-contact">
+        <div className="footer-col footer-contact footer-links">
           <div className="footer-title">Contact Info</div>
-          <ul>
+          <ul style={{ color: '#fff' }}>
             <li>
-              <span className="pi pi-envelope"></span> digiwavesrilanka@gmail.com
+              <span className="pi pi-envelope"></span>{' '}
+              <a href="mailto:digiwavesrilanka@gmail.com" style={{ color: '#fff' }}>
+                digiwavesrilanka@gmail.com
+              </a>
             </li>
+
             <li>
-              <span className="pi pi-phone"></span> +94 77 444 199 00
+              <span className="pi pi-phone"></span>{' '}
+              <a href="tel:+94774419900" style={{ color: '#fff' }}>
+                +94 77 441 9900
+              </a>
             </li>
+
             <li>
-              <span className="pi pi-globe"></span> www.digiwave.lk
+              <span className="pi pi-phone"></span>{' '}
+              <a href="tel:+94719089900" style={{ color: '#fff' }}>
+                +94 71 908 9900
+              </a>
+            </li>
+
+            <li>
+              <span className="pi pi-globe"></span>{' '}
+              <a href="https://www.digiwave.lk" target="_blank" rel="noopener noreferrer" style={{ color: '#fff' }}>
+                www.digiwave.lk
+              </a>
             </li>
           </ul>
         </div>
+
       </div>
     </footer>
   );
