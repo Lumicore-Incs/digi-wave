@@ -16,8 +16,8 @@ build/
 /dist/
 
 # Environment variables
-.env*.local
-.env
+env*.local
+env
 
 # Testing
 coverage/

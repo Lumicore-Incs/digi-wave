@@ -227,28 +227,6 @@ export default function ServicesList() {
               and conversions. Turn followers into fans and clicks into customers.
             </p>
 
-            <div className="service-packages">
-              <h5 className="packages-title">Digital News Platforms</h5>
-              <div className="packages-grid">
-                <div className="package-item">
-                  <span className="package-name">News Center</span>
-                  {/* <span className="package-price font-color-02">Rs 30,000</span> */}
-                </div>
-                <div className="package-item">
-                  <span className="package-name">Wayaba.lk</span>
-                  {/* <span className="package-price font-color-02">Rs 20,000</span> */}
-                </div>
-                <div className="package-item">
-                  <span className="package-name">CEYLONWIRE</span>
-                  {/* <span className="package-price font-color-02">Rs 25,000</span> */}
-                </div>
-                <div className="package-item">
-                  <span className="package-name">DailyTimes</span>
-                  {/* <span className="package-price font-color-02">Rs 22,000</span> */}
-                </div>
-              </div>
-            </div>
-
             <div className="service-features">
               <div className="feature-item">
                 <span className="feature-check font-color-02">✓</span>
