@@ -55,7 +55,8 @@ export default function ProjectShowcaseCarosal() {
           numScroll={1}
           itemTemplate={imageTemplate}
           circular
-          autoplayInterval={2000}
+          autoplay
+          autoplayInterval={4000}
           className="project-carousel"
         />
       </div>
