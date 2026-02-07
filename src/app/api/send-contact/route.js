@@ -1,32 +1,32 @@
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-    },
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
+  },
 });
 
 export async function POST(req) {
-    try {
-        const { firstName, lastName, email, phone, message } = await req.json();
+  try {
+    const { firstName, lastName, email, phone, message } = await req.json();
 
-        // Validate required fields
-        if (!firstName || !email) {
-            return Response.json(
-                { error: 'First name and email are required' },
-                { status: 400 }
-            );
-        }
+    // Validate required fields
+    if (!firstName || !email) {
+      return Response.json(
+        { error: 'First name and email are required' },
+        { status: 400 }
+      );
+    }
 
-        // Send email
-        await transporter.sendMail({
-            from: `"Digiwave.lk" <${process.env.EMAIL_USER}>`,
-            to: process.env.EMAIL_USER,
-            replyTo: email,
-            subject: 'New Quote Request | Digiwave Website',
-            html: `
+    // Send email
+    await transporter.sendMail({
+      from: `"Digiwave.lk" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      replyTo: email,
+      subject: 'New Quote Request | Digiwave Website',
+      html: `
         <!DOCTYPE html>
         <html>
           <head>
@@ -63,8 +63,7 @@ export async function POST(req) {
                 max-height: 60px;
               }
               .header {
-                background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
-                color: white;
+                color: Black;
                 padding: 30px 30px 40px 30px;
                 text-align: center;
                 border-bottom: none;
@@ -100,6 +99,8 @@ export async function POST(req) {
                 padding: 20px;
                 border-radius: 10px;
                 border: 1px solid #e0e8f0;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                margin-bottom: 20px;
               }
               .info-label {
                 font-size: 12px;
@@ -188,7 +189,6 @@ export async function POST(req) {
           <body>
             <div class="container">
               <div class="logo-section">
-                <img src="https://www.digiwave.lk/images/logos/logo1.png" alt="Digiwave Logo" class="logo">
               </div>
               <div class="header">
                 <h1>📬 New Contact Message</h1>
@@ -235,17 +235,17 @@ export async function POST(req) {
           </body>
         </html>
       `,
-        });
+    });
 
-        return Response.json(
-            { message: 'Email sent successfully' },
-            { status: 200 }
-        );
-    } catch (error) {
-        console.error('Email error:', error.message, error);
-        return Response.json(
-            { error: `Failed to send email: ${error.message}` },
-            { status: 500 }
-        );
-    }
+    return Response.json(
+      { message: 'Email sent successfully' },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Email error:', error.message, error);
+    return Response.json(
+      { error: `Failed to send email: ${error.message}` },
+      { status: 500 }
+    );
+  }
 }
