@@ -53,15 +53,64 @@
 
 .mobile-menu-btn {
   display: none;
-  border: none !important;
-  font-size: 1.5rem !important;
-  padding: 0.5rem !important;
-  font-weight: 800;
-  width: 4rem !important;
+  border: none;
+  background: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.mobile-menu-btn:hover {
-  /* background: none !important; */
+.menu-icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.2rem;
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after,
+.menu-icon {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.menu-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.menu-icon {
+  background-color: #333;
+}
+
+.menu-icon.open::before {
+  transform: rotate(45deg) translateY(0.6rem);
+}
+
+.menu-icon.open {
+  background-color: transparent;
+}
+
+.menu-icon.open::after {
+  transform: rotate(-45deg) translateY(-0.6rem);
 }
 
 /* Mobile Responsive */

@@ -63,8 +63,7 @@ export async function POST(req) {
                 max-height: 60px;
               }
               .header {
-                background: linear-gradient(135deg, #001f3f 0%, #003d7a 100%);
-                color: white;
+                color: Black;
                 padding: 30px 30px 40px 30px;
                 text-align: center;
                 border-bottom: none;
@@ -100,6 +99,8 @@ export async function POST(req) {
                 padding: 20px;
                 border-radius: 10px;
                 border: 1px solid #e0e8f0;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                margin-bottom: 20px;
               }
               .info-label {
                 font-size: 12px;
@@ -187,8 +188,7 @@ export async function POST(req) {
           </head>
           <body>
             <div class="container">
-              <div class="logo-section">
-                <img src="https://www.digiwave.lk/images/logos/logo1.png" alt="Digiwave Logo" class="logo">
+                <div class="logo-section">
               </div>
               <div class="header">
                 <h1>💼 New Quote Request</h1>

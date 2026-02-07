@@ -2,11 +2,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Button } from 'primereact/button';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import './styles/Header.css';
 
-export default function Header() {
+function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,7 +25,7 @@ export default function Header() {
     <header className="header">
       <div className="header-content">
         <div className="logo-section">
-          <Image src="/images/logo-blue.png" alt="DigiWave Logo" width={180} height={60} />
+          <Image src="/images/logo-blue.png" alt="DigiWave Logo" width={180} height={60} priority />
         </div>
 
         <nav className={`nav-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
@@ -55,13 +54,17 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <Button
-          icon={isMobileMenuOpen ? 'pi pi-times' : 'pi pi-bars'}
+        <button
           className="mobile-menu-btn"
           aria-label="Menu"
           onClick={toggleMobileMenu}
-        />
+          type="button"
+        >
+          <span className={`menu-icon ${isMobileMenuOpen ? 'open' : ''}`}></span>
+        </button>
       </div>
     </header>
   );
 }
+
+export default memo(Header);
