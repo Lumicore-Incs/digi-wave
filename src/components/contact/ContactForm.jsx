@@ -104,14 +104,21 @@ export default function ContactForm() {
             <div className="contact-info-item">
               <h4 className="contact-info-label">Email</h4>
               <a href="mailto:info@digiwave.com" className="contact-info-link">
-                info@digiwave@gmail.com
+                digiwavesrilanka@gmail.com
               </a>
             </div>
 
             <div className="contact-info-item">
               <h4 className="contact-info-label">Phone</h4>
-              <a href="tel:+94774719369990" className="contact-info-link">
-                +94 77 (471) 936 9990
+              <a href="tel:+94774419900" className="contact-info-link">
+                +94 77 441 9900
+              </a>
+            </div>
+
+            <div className="contact-info-item">
+              <h4 className="contact-info-label">Phone</h4>
+              <a href="tel:+94719089900" className="contact-info-link">
+                +94 71 908 9900
               </a>
             </div>
 

@@ -1,8 +1,15 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { Button } from 'primereact/button';
 import './styles/CTASection.css';
 
 export default function CTASection() {
+  const router = useRouter();
+
+  const handleNavigateToContact = () => {
+    router.push('/contact');
+  };
+
   return (
     <section className="cta-section">
       <div className="cta-container">
@@ -13,7 +20,7 @@ export default function CTASection() {
         <h2 className="cta-title">
           Join the successful brands <span className="text-blue">partnering with DigiWave.</span>
         </h2>
-        <Button label="Start Your Journey Today" className="cta-button" />
+        <Button label="Start Your Journey Today" className="cta-button" onClick={handleNavigateToContact} />
       </div>
     </section>
   );

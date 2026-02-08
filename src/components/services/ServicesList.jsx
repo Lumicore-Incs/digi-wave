@@ -151,27 +151,6 @@ export default function ServicesList() {
             </p>
 
             <div className="service-items">
-              <div className="service-item-head">
-                <span className="">TV Program Sponsorships</span>
-              </div>
-              <div className="service-items">
-                <div className="service-item service-item-01">
-                  <span className="item-name">Channel 19 Package</span>
-                  {/* <span className="item-price font-color-01">Rs 170,000</span> */}
-                </div>
-                <div className="service-item service-item-01">
-                  <span className="item-name">NewsCenter.lk Package</span>
-                  {/* <span className="item-price font-color-01">Rs 180,000</span> */}
-                </div>
-                <div className="service-item service-item-01">
-                  <span className="item-name font-bold">DERANA Seda Mawatha</span>
-                  {/* <span className="item-price font-color-01">Rs 200,000 + VAT</span> */}
-                </div>
-                <div className="service-item service-item-01">
-                  <span className="item-name font-bold">RUPAWAHIN Nugasewana</span>
-                  {/* <span className="item-price font-color-01">Rs 175,000 + VAT</span> */}
-                </div>
-              </div>
 
               <div className="service-items-set">
                 <span className="service-item-head">Press Release Service</span>

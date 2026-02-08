@@ -21,7 +21,6 @@ const logos = [
   { src: '/images/logos/brand-logo-16.png', alt: 'Brand 16' },
   { src: '/images/logos/brand-logo-17.png', alt: 'Brand 17' },
   { src: '/images/logos/brand-logo-18.png', alt: 'Brand 18' },
-  { src: '/images/logos/brand-logo-19.png', alt: 'Brand 19' },
   { src: '/images/logos/brand-logo-20.png', alt: 'Brand 20' },
   { src: '/images/logos/brand-logo-21.png', alt: 'Brand 21' },
   { src: '/images/logos/brand-logo-22.png', alt: 'Brand 22' },
