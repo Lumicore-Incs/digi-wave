@@ -189,6 +189,7 @@ body {
   background-color: transparent;
   color: #ffffff;
   border: 2px solid #ffffff;
+  z-index: 9999;
 }
 
 .btn-secondary:hover {

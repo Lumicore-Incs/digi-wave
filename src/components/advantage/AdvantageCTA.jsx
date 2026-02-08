@@ -1,8 +1,16 @@
 'use client';
 import { Button } from 'primereact/button';
+import { useRouter } from 'next/navigation';
+
 import './styles/AdvantageCTA.css';
 
 export default function AdvantageCTA() {
+  const router = useRouter();
+
+  const handleNavigateToContact = () => {
+    router.push('/contact');
+  };
+
   return (
     <section className="advantage-cta-section">
       <div className="advantage-cta-container">
@@ -14,7 +22,7 @@ export default function AdvantageCTA() {
           Let&apos;s drive your business forward{' '}
           <span className="text-blue">with our proven approach.</span>
         </h2>
-        <Button label="Schedule A Strategy Session" className="advantage-cta-button" />
+        <Button label="Schedule A Strategy Session" className="advantage-cta-button" onClick={handleNavigateToContact} />
       </div>
     </section>
   );

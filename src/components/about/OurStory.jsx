@@ -68,14 +68,14 @@ export default function OurStory() {
                 className="story-img"
               />
               <Image
-                src="/about-us/about-us-images.jpg"
+                src="/services/services-images-03.jpg"
                 alt="DigiWave Team"
                 width={180}
                 height={140}
                 className="story-img-02 story-img"
               />
               <Image
-                src="/about-us/about-us-background.jpg"
+                src="/images/hero-background-1.jpg"
                 alt="DigiWave Work"
                 width={180}
                 height={140}
