@@ -96,6 +96,42 @@
   font-size: 1.1rem;
   vertical-align: middle;
 }
+/* Public Footer / Copyright Section */
+.public-footer {
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  padding: 24px 32px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.footer-credits a {
+  color: #186fc1;
+  text-decoration: none;
+  opacity: 0.9;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.footer-credits a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .footer-content {
     flex-direction: column;
@@ -109,5 +145,13 @@
   }
   .footer-brand {
     max-width: 100%;
+  }
+  
+  .public-footer {
+    padding: 20px 16px;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.9rem;
   }
 }

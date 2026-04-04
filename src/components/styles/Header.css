@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   z-index: 1000;
-  height: 10vh;
+  height: 7vh;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -49,6 +49,30 @@
 .nav-link.active {
   color: #0046b6;
   font-weight: 600;
+  animation: navItemEmerge 0.8s ease-in-out forwards;
+}
+
+.nav-link:active {
+  animation: navItemEmerge 0.8s ease-in-out forwards;
+}
+
+@keyframes navItemEmerge {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .mobile-menu-btn {
