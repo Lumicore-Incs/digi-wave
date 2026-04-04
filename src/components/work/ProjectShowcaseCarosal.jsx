@@ -1,9 +1,16 @@
 'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Carousel } from 'primereact/carousel';
 import './styles/ProjectShowcaseCarosal.css';
 
 export default function ProjectShowcaseCarosal() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const images = [
     { id: 1, src: '/our-work/our-work-images-1.jpg', alt: 'Project Showcase 1' },
     { id: 2, src: '/our-work/our-work-images-2.jpg', alt: 'Project Showcase 2' },
@@ -49,6 +56,7 @@ export default function ProjectShowcaseCarosal() {
           </h2>
         </div>
 
+        {isClient && (
         <Carousel
           value={images}
           numVisible={1}
@@ -56,9 +64,10 @@ export default function ProjectShowcaseCarosal() {
           itemTemplate={imageTemplate}
           circular
           autoplay
-          autoplayInterval={4000}
+          autoplayInterval={2000}
           className="project-carousel"
         />
+        )}
       </div>
     </section>
   );

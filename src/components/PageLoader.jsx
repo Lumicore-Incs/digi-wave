@@ -19,11 +19,7 @@ export default function PageLoader() {
   return (
     <div className="page-loader">
       <div className="loader-content">
-        <div className="loader-spinner">
-          <div className="spinner-ring"></div>
-          <div className="spinner-ring"></div>
-          <div className="spinner-ring"></div>
-        </div>
+        <div className="cssload-box-loading"></div>
         <div className="loader-text">DIGIWAVE...</div>
       </div>
     </div>

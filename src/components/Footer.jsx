@@ -4,6 +4,7 @@ import './styles/Footer.css';
 
 export default function Footer() {
   return (
+    <>
     <footer className="footer-section">
       <div className="footer-bg" />
       <div className="footer-content">
@@ -79,5 +80,14 @@ export default function Footer() {
 
       </div>
     </footer>
+
+    {/* Footer / Copyright Section */}
+    <footer className="public-footer">
+      <div className="footer-bottom">
+        <p>© 2026 Lumicore Labs. All Rights Reserved. | Designed & Developed with Adits Technologies</p>
+        <p className="footer-credits">Powered by <a href="https://piyumalnipuna60.github.io/My-Portfoliyo-2" target="_blank" rel="noopener noreferrer">Nipuna Piyumal</a></p>
+      </div>
+    </footer>
+    </>
   );
 }

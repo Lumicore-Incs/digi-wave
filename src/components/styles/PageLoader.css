@@ -1,3 +1,4 @@
+/* ===== Page Loader - Bouncing Box Animation ===== */
 .page-loader {
   position: fixed;
   top: 0;
@@ -9,7 +10,7 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  animation: fadeOut 0.5s ease-out 1.2s forwards;
+  animation: fadeOut 0.5s ease-out 1.5s forwards;
 }
 
 @keyframes fadeOut {
@@ -23,62 +24,79 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-.loader-spinner {
+/* Bouncing Box Wrapper */
+.cssload-box-loading {
+  width: 49px;
+  height: 49px;
   position: relative;
-  width: 120px;
-  height: 120px;
 }
 
-.spinner-ring {
+/* Shadow below the box */
+.cssload-box-loading::before {
+  content: '';
+  width: 49px;
+  height: 5px;
+  background: #000;
+  opacity: 0.2;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 4px solid transparent;
+  top: 58px;
+  left: 0;
   border-radius: 50%;
-  animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  animation: loader-shadow 0.58s linear infinite;
 }
 
-.spinner-ring:nth-child(1) {
-  border-top-color: #fff;
-  animation-delay: 0s;
+/* The bouncing golden box */
+.cssload-box-loading::after {
+  content: '';
+  width: 49px;
+  height: 49px;
+  background: rgb(88, 224, 78);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  animation: load-animate 0.58s linear infinite;
+  box-shadow: 0 0 20px rgba(253, 210, 69, 0.6);
 }
 
-.spinner-ring:nth-child(2) {
-  border-right-color: rgba(255, 255, 255, 0.7);
-  animation-delay: 0.2s;
-  width: 85%;
-  height: 85%;
-  top: 7.5%;
-  left: 7.5%;
-}
-
-.spinner-ring:nth-child(3) {
-  border-bottom-color: rgba(255, 255, 255, 0.4);
-  animation-delay: 0.4s;
-  width: 70%;
-  height: 70%;
-  top: 15%;
-  left: 15%;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+@keyframes load-animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 39px;
+  }
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translateY(0) rotate(90deg);
   }
 }
 
+@keyframes loader-shadow {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
+/* Loader Text */
 .loader-text {
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
-  letter-spacing: 0.1em;
-  animation: pulse 1.5s ease-in-out infinite;
+  letter-spacing: 0.15em;
+  animation: pulse 1.2s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -86,55 +104,25 @@
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.4;
   }
 }
 
-/* Alternative modern loader styles */
-.page-loader.loader-dots .loader-spinner {
-  display: flex;
-  gap: 1rem;
-  width: auto;
-  height: auto;
-}
-
-.page-loader.loader-dots .spinner-ring {
-  position: static;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border: none;
-  animation: bounce 1.4s ease-in-out infinite;
-}
-
-.page-loader.loader-dots .spinner-ring:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.page-loader.loader-dots .spinner-ring:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.page-loader.loader-dots .spinner-ring:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes bounce {
-  0%, 80%, 100% {
-    transform: scale(0);
-    opacity: 0.5;
-  }
-  40% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-  .loader-spinner {
-    width: 80px;
-    height: 80px;
+  .cssload-box-loading {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cssload-box-loading::before {
+    width: 38px;
+    top: 46px;
+  }
+
+  .cssload-box-loading::after {
+    width: 38px;
+    height: 38px;
   }
 
   .loader-text {
