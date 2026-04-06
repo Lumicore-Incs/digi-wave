@@ -36,6 +36,7 @@
   font-weight: 700;
   line-height: 1.1;
   color: #fff;
+  font-family: 'Inter';
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
@@ -80,9 +81,8 @@
   }
 
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 2.75rem;
     margin-bottom: 0.5rem;
-    word-spacing: 9999px;
     text-align: center;
   }
 
@@ -111,7 +111,7 @@
   }
 
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   .hero-subtitle {

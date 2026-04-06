@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "lucide-react": "^1.7.0",
     "next": "^14.0.0",
     "nodemailer": "^8.0.0",
     "primeflex": "^3.3.0",
