@@ -25,6 +25,7 @@
   z-index: 1;
 }
 
+/* ================= NAV ================= */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -36,7 +37,7 @@
   color: #333;
   text-decoration: none;
   font-size: var(--font-size-base);
-  transition: color 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
   padding: 0.5rem 0.75rem;
   position: relative;
   font-weight: var(--font-weight-semibold);
@@ -56,6 +57,7 @@
   animation: navItemEmerge 0.8s ease-in-out forwards;
 }
 
+/* Animation */
 @keyframes navItemEmerge {
   0% {
     transform: translateY(0);
@@ -75,69 +77,32 @@
   }
 }
 
+/* ================= MOBILE BUTTON ================= */
 .mobile-menu-btn {
   display: none;
   border: none;
-  background: none;
+  background: transparent;
   padding: 0.5rem;
   cursor: pointer;
   width: 3rem;
   height: 3rem;
   align-items: center;
   justify-content: center;
-}
-
-.menu-icon {
-  display: block;
-  width: 1.5rem;
-  height: 1.2rem;
-  position: relative;
-}
-
-.menu-icon::before,
-.menu-icon::after,
-.menu-icon {
-  content: '';
-  display: block;
-  height: 2px;
-  background-color: #333;
+  color: #333;
   transition: all 0.3s ease;
-  border-radius: 2px;
+  z-index: 999;
 }
 
-.menu-icon::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.mobile-menu-btn:hover {
+  color: #0046b6;
+  transform: scale(1.1);
 }
 
-.menu-icon::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+.mobile-menu-btn:active {
+  transform: scale(0.95);
 }
 
-.menu-icon {
-  background-color: #333;
-}
-
-.menu-icon.open::before {
-  transform: rotate(45deg) translateY(0.6rem);
-}
-
-.menu-icon.open {
-  background-color: transparent;
-}
-
-.menu-icon.open::after {
-  transform: rotate(-45deg) translateY(-0.6rem);
-}
-
-/* Mobile Responsive */
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
   .header {
     height: auto;
@@ -156,43 +121,64 @@
     width: 100%;
     padding: 1rem 0;
     gap: 0;
+
+    /* Glass effect */
     backdrop-filter: blur(9px) saturate(65%);
     -webkit-backdrop-filter: blur(5px) saturate(65%);
-    background-color: #d4d4d442;
+    background-color: #6d9ae289;
+
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
+
     background-image: radial-gradient(at 71% -9%, #0c55d5d1 0, #2196f300 52%),
       radial-gradient(at 27% 9%, hsl(254deg 0% 100% / 73%) 0, transparent 40%);
+
+    animation: slideDown 0.3s ease;
   }
 
   .nav-menu.mobile-open {
     display: flex;
     position: absolute;
-    top: 0;
-    /* left: 0;
+    top: 100%;
+    left: 0;
     right: 0;
-    z-index: 1000; */
+    z-index: 999;
   }
 
   .nav-link {
     width: 100%;
     padding: 1rem;
     text-align: center;
-    color: #c9c9c9;
+    color: #080808;
     border-radius: 14px;
   }
 
-  .nav-link:last-child {
-    border-bottom: none;
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
   }
 
   .mobile-menu-btn {
     display: flex !important;
+    position: relative;
+    z-index: 999;
   }
 }
 
+/* Small devices */
 @media (max-width: 450px) {
   .nav-menu.mobile-open {
-    margin-top: 3.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ================= EXTRA ANIMATION ================= */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

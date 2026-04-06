@@ -44,7 +44,7 @@ export default function Hero() {
             <div className="cta-buttons">
               <Button 
                 label="Get In Touch" 
-                className="btn btn-primary" 
+                className="btn btn-primary" Join the successful brands
                 onClick={() => router.push('/about')}
               />
               <Button 

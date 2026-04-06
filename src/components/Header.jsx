@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { memo, useState } from 'react';
+import { Menu, X } from 'lucide-react'; // ✅ Modern icons
 import './styles/Header.css';
 
 function Header() {
@@ -25,7 +26,13 @@ function Header() {
     <header className="header">
       <div className="header-content">
         <div className="logo-section">
-          <Image src="/images/logo-blue.png" alt="DigiWave Logo" width={180} height={60} priority />
+          <Image
+            src="/images/logo-blue.png"
+            alt="DigiWave Logo"
+            width={180}
+            height={60}
+            priority
+          />
         </div>
 
         <nav className={`nav-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
@@ -53,14 +60,18 @@ function Header() {
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* ✅ Modern Mobile Menu Button with Icon Toggle */}
         <button
           className="mobile-menu-btn"
-          aria-label="Menu"
+          aria-label="Toggle menu"
           onClick={toggleMobileMenu}
           type="button"
         >
-          <span className={`menu-icon ${isMobileMenuOpen ? 'open' : ''}`}></span>
+          {isMobileMenuOpen ? (
+            <X size={28} strokeWidth={2.5} />
+          ) : (
+            <Menu size={28} strokeWidth={2.5} />
+          )}
         </button>
       </div>
     </header>
