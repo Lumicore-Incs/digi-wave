@@ -44,7 +44,7 @@ export default function ProjectShowcaseCarosal() {
   };
 
   return (
-    <section className="project-carousel-section">
+    <section className="project-carousel-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
       <div className="project-carousel-container">
         <div className="carousel-header">
           <div className="carousel-headlines">

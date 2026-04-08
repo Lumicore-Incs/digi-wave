@@ -33,7 +33,7 @@ export default function OurAdvantage() {
   const activeContent = advantageSteps[activeStep];
 
   return (
-    <section className="our-advantage-section" data-aos="fade-left">
+    <section className="our-advantage-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
       <div className="our-advantage-content">
         <div className="our-advantage-headline">
           <div className="headline-bg">Our Latest projects</div>

@@ -83,7 +83,7 @@ export default function ContactForm() {
     }
   };
   return (
-    <section className="contact-form-section">
+    <section className="contact-form-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
       <div className="contact-intro">
         <div className="contact-intro-headlines">
           <div className="headline-bg">We&apos;re Here to Help</div>

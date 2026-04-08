@@ -49,13 +49,13 @@ export default function WorkProcess() {
   ];
 
   return (
-    <section className="work-process-section">
+    <section className="work-process-section" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
       <div className="work-process-container">
-        <div className="work-process-headlines">
+        <div className="work-process-headlines" data-aos="fade-down" data-aos-duration="800">
           <h1 className="headline-bg">Work Process</h1>
           <h2 className="headline-fg">Work Process</h2>
         </div>
-        <h2 className="process-title">Our Proven Work Process</h2>
+        <h2 className="process-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Our Proven Work Process</h2>
         
         <div className="process-steps">
           {steps.map((step, index) => {
@@ -64,6 +64,8 @@ export default function WorkProcess() {
               <div
                 key={index}
                 className="process-step"
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
                 style={{
                   '--stagger-index': index,
                   '--step-delay': `${index * 0.15}s`,
