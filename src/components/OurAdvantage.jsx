@@ -33,13 +33,13 @@ export default function OurAdvantage() {
   const activeContent = advantageSteps[activeStep];
 
   return (
-    <section className="our-advantage-section" data-aos="fade-left">
+    <section className="our-advantage-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
       <div className="our-advantage-content">
-        <div className="our-advantage-headline">
+        <div className="our-advantage-headline" data-aos="fade-left" data-aos-duration="1000">
           <div className="headline-bg">Our Latest projects</div>
           <div className="headline-fg">Our Latest Projects</div>
         </div>
-        <div className="our-advantage-title">
+        <div className="our-advantage-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
           Explore Our Showcase of <span className="featured-work">Featured Work</span>
         </div>
         <div className="our-advantage-steps">
@@ -50,6 +50,9 @@ export default function OurAdvantage() {
                 key={idx}
                 onClick={() => setActiveStep(idx)}
                 style={{ cursor: 'pointer' }}
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay={400 + idx * 100}
               >
                 <div
                   className={`step-icon-bg step-icon-bg-${idx} ${
@@ -70,17 +73,18 @@ export default function OurAdvantage() {
           </div>
         </div>
         <div className="our-advantage-row">
-          <div className="our-advantage-card">
+          <div className="our-advantage-card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
             <div className="our-advantage-desc-head">{activeContent.head}</div>
             <div className="our-advantage-desc-text">{activeContent.text}</div>
           </div>
-          <div className="our-advantage-image-wrap">
+          <div className="our-advantage-image-wrap" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
             <Image
               src={activeContent.image}
               alt="features work images"
               width={320}
               height={200}
               className="our-advantage-image"
+              sizes="(max-width: 768px) 100vw, 320px"
             />
           </div>
         </div>

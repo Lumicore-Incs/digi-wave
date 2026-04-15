@@ -70,7 +70,7 @@ export default function CompanyNetwork() {
 
     if (node.type === 'division') {
       return (
-        <div className="division-container">
+        <div className="division-container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
           <h4 className="division-title">
             {node.data.title}
             {node.data.subtitle && <span className="division-subtitle">{node.data.subtitle}</span>}
@@ -78,7 +78,7 @@ export default function CompanyNetwork() {
           <div className="division-node-content">
             <ul className="division-list">
               {node.data.items.map((item, index) => (
-                <li key={index}>
+                <li key={index} data-aos="fade-left" data-aos-delay={300 + (index * 100)} data-aos-duration="600">
                   {typeof item === 'object' ? (
                     <>
                       <span className="item-icon">
@@ -106,17 +106,17 @@ export default function CompanyNetwork() {
   };
 
   return (
-    <section className="company-network-section">
+    <section className="company-network-section" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
       <div className="company-network-container">
-        <div className="network-subtitle-headline">
+        <div className="network-subtitle-headline" data-aos="fade-down" data-aos-duration="800">
           <div className="headline-bg">Wickramanayake Holdings</div>
           <div className="headline-fg">Wickramanayake Holdings</div>
         </div>
-        <h2 className="network-title">
+        <h2 className="network-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
           A powerful network driving <span className="text-blue">Digital Transformation</span>
         </h2>
 
-        <div className="org-chart-wrapper">
+        <div className="org-chart-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
           <OrganizationChart value={data} nodeTemplate={nodeTemplate} />
           <span className="org-chart-line"></span>
         </div>

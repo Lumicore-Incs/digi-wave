@@ -11,7 +11,6 @@
   background-repeat: no-repeat;
 }
 
-
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -31,6 +30,7 @@
   pointer-events: auto;
 }
 
+/* ========== ANIMATED TITLE STYLES ========== */
 .hero-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -38,15 +38,47 @@
   color: #fff;
   font-family: 'Inter';
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: inline-block;
+  position: relative;
 }
+
+.glitch-window {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 100%;
+  color: #090909;
+  text-shadow: 2px 0 #080808, -1px 0 yellow, -2px 0 green;
+  overflow: hidden;
+  animation: crt-me 2500ms infinite linear alternate-reverse;
+}
+
+@keyframes crt-me {
+  0% { clip: rect(31px, 9999px, 94px, 0); }
+  10% { clip: rect(112px, 9999px, 76px, 0); }
+  20% { clip: rect(85px, 9999px, 77px, 0); }
+  30% { clip: rect(27px, 9999px, 97px, 0); }
+  40% { clip: rect(64px, 9999px, 98px, 0); }
+  50% { clip: rect(61px, 9999px, 85px, 0); }
+  60% { clip: rect(99px, 9999px, 114px, 0); }
+  70% { clip: rect(34px, 9999px, 115px, 0); }
+  80% { clip: rect(98px, 9999px, 129px, 0); }
+  90% { clip: rect(43px, 9999px, 96px, 0); }
+  100% { clip: rect(82px, 9999px, 64px, 0); }
+}
+
+/* ========== END ANIMATED TITLE STYLES ========== */
 
 .hero-subtitle {
   font-size: 1.25rem;
   line-height: 1.7;
   color: #d3eafe;
   font-style: italic;
-  margin-bottom: 0.5rem;
+  margin: 1.5rem 0 0.5rem 0;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .cta-buttons {
@@ -55,14 +87,29 @@
   gap: 1rem;
   position: relative;
   z-index: 999;
+  margin-top: 2rem;
 }
 
 .cta-buttons .btn {
   position: relative;
   z-index: 999;
   cursor: pointer;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
 }
 
+/* Fade in up animation for supporting elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
   .hero-overlay {
     align-items: flex-end;
@@ -84,11 +131,14 @@
     font-size: 2.75rem;
     margin-bottom: 0.5rem;
     text-align: center;
+    display: block;
   }
+
+
 
   .hero-subtitle {
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0 1.5rem 0;
     text-align: center;
   }
 
@@ -98,6 +148,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    margin-top: 2rem;
   }
 
   .cta-buttons .btn {
@@ -117,8 +168,11 @@
   .hero-subtitle {
     font-size: 0.9rem;
   }
+
+
 }
 
+/* ========== STATS GRID ========== */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -140,19 +194,40 @@
   font-size: 0.875rem;
   color: #666666;
 }
-/* Background image fade effect */
-.hero-bg {
+
+/* ========== BACKGROUND IMAGE EFFECTS ========== */
+.hero-bg-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   z-index: 0;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-bg-image.active {
   opacity: 1;
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-bg-image.fading {
+  opacity: 0;
+}
+
+.hero-bg-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-bg::after {
@@ -167,14 +242,16 @@
   opacity: 0.55;
   z-index: 1;
 }
+
 .fade-in {
   opacity: 1;
 }
+
 .fade-out {
   opacity: 0.7;
 }
 
-/* Particle Animation Wrapper */
+/* ========== PARTICLE ANIMATION ========== */
 .particle-animation-wrapper {
   position: absolute;
   top: 50%;
@@ -185,7 +262,6 @@
   z-index: 3;
 }
 
-/* Particle Animation Canvas */
 .particle-canvas {
   position: absolute;
   top: 0;
@@ -194,24 +270,21 @@
   height: 100%;
   pointer-events: auto;
   transition: opacity 0.3s ease;
-  /* Blend mode for better integration */
   mix-blend-mode: screen;
   opacity: 0.9;
-  /* z-index: 2; */
 }
 
 .particle-canvas:hover {
   opacity: 0.95;
 }
 
-/* Mobile optimizations */
+/* ========== MOBILE OPTIMIZATIONS ========== */
 @media (max-width: 768px) {
   .particle-animation-wrapper {
     margin-top: -4rem;
     height: 60%;
     width: 90%;
     font-size: 5rem !important;
-
   }
 
   .particle-canvas {
@@ -245,7 +318,7 @@
   }
 }
 
-/* Color Mask Overlay */
+/* ========== COLOR MASK OVERLAY ========== */
 .particle-mask {
   position: absolute;
   top: 50%;
@@ -256,7 +329,6 @@
   background: #1581bf;
   opacity: 0.3;
   z-index: 2;
-  /* Mask effect to blend with background */
   mask-image: radial-gradient(
     ellipse at center,
     rgba(0, 0, 0, 1) 0%,

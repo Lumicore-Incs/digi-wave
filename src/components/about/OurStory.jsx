@@ -66,6 +66,10 @@ export default function OurStory() {
                 width={300}
                 height={225}
                 className="story-img"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+                priority
+                sizes="(max-width: 768px) 100vw, 300px"
               />
               <Image
                 src="/services/services-images-03.jpg"
@@ -73,6 +77,10 @@ export default function OurStory() {
                 width={180}
                 height={140}
                 className="story-img-02 story-img"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="500"
+                sizes="180px"
               />
               <Image
                 src="/images/hero-background-1.jpg"
@@ -80,6 +88,10 @@ export default function OurStory() {
                 width={180}
                 height={140}
                 className="story-img-03 story-img w-10"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="800"
+                sizes="180px"
               />
             </div>
             <div className="story-images-small"></div>
@@ -87,31 +99,31 @@ export default function OurStory() {
         </div>
 
         <div className="our-story-right">
-          <div className="our-story-headline">
+          <div className="our-story-headline" data-aos="fade-left" data-aos-duration="1000">
             <div className="headline-bg">Our Story</div>
             <div className="headline-fg">Our Story</div>
           </div>
-          <h2 className="our-story-title">
+          <h2 className="our-story-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             Tranforming <span className="text-blue">ideas</span>
             <br />
             <span className="text-blue"> Into Digital Reality</span>
           </h2>
-          <p className="our-story-text">
+          <p className="our-story-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
             DigiWave helps brands embrace digital transformation with local insights, global
             expertise, and exclusive media access. We don’t just follow trends—we create them,
             guiding clients to succeed in the fast-changing digital world.
           </p>
 
           <div className="our-story-stats" ref={statsRef}>
-            <div className="stat-item">
+            <div className="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
               <div className="stat-number">{clients}+</div>
               <div className="stat-label">Clients</div>
             </div>
-            <div className="stat-item">
+            <div className="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
               <div className="stat-number">{projects}+</div>
               <div className="stat-label">Projects</div>
             </div>
-            <div className="stat-item">
+            <div className="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
               <div className="stat-number">{retention}%</div>
               <div className="stat-label">Retention Rate</div>
             </div>

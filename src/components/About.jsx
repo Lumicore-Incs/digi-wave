@@ -4,6 +4,7 @@ import Image from 'next/image';
 import './styles/About.css';
 
 export default function About() {
+
   const features = [
     {
       icon: '/images/about-us-icons-1.png',
@@ -32,7 +33,7 @@ export default function About() {
   ];
 
   return (
-    <section className="about-section" data-aos="fade-right">
+    <section className="about-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
       <div className="relative team-headline">
         <div className="headline-bg">Innovate. Elevate. Excel.</div>
         <div className="headline-fg">Innovate. Elevate. Excel.</div>
@@ -44,7 +45,15 @@ export default function About() {
         </h2>
         <div className="about-features-grid">
           {features.map((feature, idx) => (
-            <div className="about-feature-card" key={idx}>
+            <div 
+              className="about-feature-card" 
+              key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 150}
+              data-aos-duration="1000"
+              data-aos-easing="ease-out-cubic"
+              data-aos-once="true"
+            >
               <div className="about-feature-icon">
                 <Image src={feature.icon} alt={feature.alt} width={48} height={48} />
               </div>

@@ -30,18 +30,24 @@ export default function ContactProcess() {
       <section className="contact-process-section">
         <div className="contact-process-container">
           <div className="contact-process-header">
-            <div className="contact-process-headlines">
+            <div className="contact-process-headlines" data-aos="fade-left" data-aos-duration="1000">
               <div className="headline-bg">What Happens Next?</div>
               <div className="headline-fg">What Happens Next?</div>
             </div>
-            <h2 className="contact-process-title">
+            <h2 className="contact-process-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
               Our simple 4-step process to <span className="text-blue">get you started</span>
             </h2>
           </div>
 
           <div className="contact-process-steps">
             {steps.map((step, index) => (
-              <div key={index} className="contact-process-step">
+              <div 
+                key={index} 
+                className="contact-process-step"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay={400 + index * 100}
+              >
                 <div className="contact-step-icon-wrapper">
                   <div className="contact-step-icon">
                     <i className={`pi ${step.icon}`}></i>
@@ -57,23 +63,25 @@ export default function ContactProcess() {
 
       <section className="contact-follow-section">
         <div className="contact-follow-container">
-          <div className="contact-follow-headlines">
+          <div className="contact-follow-headlines" data-aos="fade-right" data-aos-duration="1000">
             <div className="headline-bg">Follow Our Wave</div>
             <div className="headline-fg">Follow Our Wave</div>
           </div>
-          <p className="contact-follow-text">Stay connected with us for the latest campaigns</p>
+          <p className="contact-follow-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            Stay connected with us for the latest campaigns
+          </p>
 
           <div className="contact-follow-socials">
-            <a href="#" className="contact-follow-icon" aria-label="Facebook">
+            <a href="#" className="contact-follow-icon" aria-label="Facebook" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
               <i className="pi pi-facebook"></i>
             </a>
-            <a href="#" className="contact-follow-icon" aria-label="Twitter">
+            <a href="#" className="contact-follow-icon" aria-label="Twitter" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
               <i className="pi pi-twitter"></i>
             </a>
-            <a href="#" className="contact-follow-icon" aria-label="LinkedIn">
+            <a href="#" className="contact-follow-icon" aria-label="LinkedIn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
               <i className="pi pi-linkedin"></i>
             </a>
-            <a href="#" className="contact-follow-icon" aria-label="Instagram">
+            <a href="#" className="contact-follow-icon" aria-label="Instagram" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
               <i className="pi pi-instagram"></i>
             </a>
           </div>

@@ -38,35 +38,38 @@ export default function ProjectShowcaseCarosal() {
           height={700}
           className="carousel-image"
           priority={image.id <= 3}
+          sizes="(max-width: 768px) 100vw, 1200px"
         />
       </div>
     );
   };
 
   return (
-    <section className="project-carousel-section">
+    <section className="project-carousel-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
       <div className="project-carousel-container">
         <div className="carousel-header">
-          <div className="carousel-headlines">
+          <div className="carousel-headlines" data-aos="fade-left" data-aos-duration="1000">
             <div className="headline-bg">Our Work Gallery</div>
             <div className="headline-fg">Our Work Gallery</div>
           </div>
-          <h2 className="carousel-title">
+          <h2 className="carousel-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             Explore Our <span className="text-blue">Success Stories</span>
           </h2>
         </div>
 
         {isClient && (
-        <Carousel
-          value={images}
-          numVisible={1}
-          numScroll={1}
-          itemTemplate={imageTemplate}
-          circular
-          autoplay
-          autoplayInterval={2000}
-          className="project-carousel"
-        />
+        <div data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="400">
+          <Carousel
+            value={images}
+            numVisible={1}
+            numScroll={1}
+            itemTemplate={imageTemplate}
+            circular
+            autoplay
+            autoplayInterval={2000}
+            className="project-carousel"
+          />
+        </div>
         )}
       </div>
     </section>

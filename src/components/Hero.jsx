@@ -1,6 +1,6 @@
 'use client';
-
 import { Button } from 'primereact/button';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import ParticleAnimation from './ParticleAnimation';
@@ -15,41 +15,68 @@ export default function Hero() {
     '/images/hero-background-2.jpg',
     '/images/hero-background-3.jpg',
   ];
+
   const [bgIndex, setBgIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
+  // Background rotation effect
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);
       setTimeout(() => {
         setBgIndex((prev) => (prev + 1) % bgImages.length);
         setFade(true);
-      }, 600); // fade out duration
+      }, 600);
     }, 5000);
     return () => clearInterval(interval);
   }, [bgImages.length]);
 
+  // Render title with animated characters
+  const renderAnimatedTitle = () => {
+    const title = "Innovation in Every Wave";
+    return (
+      <h1 className="hero-title glitched">
+        {title}
+        <span className="glitch-window" aria-hidden="true">{title}</span>
+      </h1>
+    );
+  };
+
   return (
     <section id="home" className="hero">
-      <div
-        className={`hero-bg ${fade ? 'fade-in' : 'fade-out'}`}
-        style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
-      ></div>
+      <div className="hero-bg-container">
+        {bgImages.map((src, index) => (
+          <div
+            key={src}
+            className={`hero-bg-image ${index === bgIndex ? 'active' : ''} ${fade ? '' : 'fading'}`}
+          >
+            <Image
+              src={src}
+              alt="Hero Background"
+              fill
+              priority={index === 0}
+              quality={85}
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        ))}
+      </div>
       <ParticleAnimation />
       <div className="hero-overlay">
         <div className="hero-container">
           <div className="hero-content" data-aos="fade-up">
-            <h1 className="hero-title">Innovation in Every Wave</h1>
+            {renderAnimatedTitle()}
             <p className="hero-subtitle">who you are, what you do.</p>
             <div className="cta-buttons">
               <Button 
                 label="Get In Touch" 
-                className="btn btn-primary" Join the successful brands
+                className="btn btn-primary"
                 onClick={() => router.push('/about')}
               />
               <Button 
                 label="Contact Us" 
-                className="btn btn-secondary" 
+                className="btn btn-secondary"
                 onClick={() => router.push('/contact')}
               />
             </div>

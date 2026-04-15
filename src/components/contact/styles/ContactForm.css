@@ -214,39 +214,27 @@
 }
 
 .contact-modal .p-dialog {
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-modal .modal-content {
-  padding: 3.5rem 2.5rem;
-  background: linear-gradient(135deg, #001f3f 0%, #003d7a 50%, #005a99 100%);
-  color: white;
-  animation: slideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 2.5rem 2rem;
+  background: white;
+  color: #1a1a1a;
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  overflow: hidden;
 }
 
-.contact-modal .modal-content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
+/* Removed heavy gradient background effects */
 
 .contact-modal .success-content {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.2rem;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
 .contact-modal .success-icon-wrapper {
@@ -263,18 +251,17 @@
 }
 
 .contact-modal .success-icon {
-  width: 100px;
-  height: 100px;
-  background: rgba(76, 175, 80, 0.25);
-  border: 3px solid #4caf50;
+  width: 70px;
+  height: 70px;
+  background: rgba(76, 175, 80, 0.1);
+  border: 2px solid #4caf50;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #4caf50;
-  animation: checkmark 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 0 0 30px rgba(76, 175, 80, 0.3);
+  animation: checkmark 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes checkmark {
@@ -292,38 +279,29 @@
 }
 
 .contact-modal .success-title {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   margin: 0;
-  font-weight: 800;
-  color: white;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+  color: #1a1a1a;
   letter-spacing: -0.5px;
 }
 
 .contact-modal .success-subtitle {
-  font-size: 1.1rem;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin: -0.5rem 0 0;
+  color: #666;
   font-weight: 500;
 }
 
-.contact-modal .success-divider {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #4caf50, transparent);
-  border-radius: 2px;
-  margin: 0.5rem 0;
-}
+/* Removed divider */
 
 .contact-modal .success-message {
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin: 0;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
+  color: #555;
+  line-height: 1.6;
   text-align: center;
-  max-width: 450px;
-  font-weight: 400;
-  letter-spacing: 0.3px;
+  max-width: 320px;
 }
 
 .contact-modal .success-info {
@@ -353,19 +331,17 @@
 }
 
 .contact-modal .success-btn {
-  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%) !important;
+  background: #1a1a1a !important;
   border: none !important;
   color: white !important;
-  padding: 1rem 2.5rem !important;
-  font-size: 1rem !important;
-  border-radius: 10px !important;
-  font-weight: 700 !important;
+  padding: 0.8rem 2.5rem !important;
+  font-size: 0.9rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
   cursor: pointer !important;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3) !important;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .contact-modal .success-btn:hover {

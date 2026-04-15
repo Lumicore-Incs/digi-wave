@@ -83,7 +83,7 @@ export default function ContactForm() {
     }
   };
   return (
-    <section className="contact-form-section">
+    <section className="contact-form-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
       <div className="contact-intro">
         <div className="contact-intro-headlines">
           <div className="headline-bg">We&apos;re Here to Help</div>
@@ -98,31 +98,31 @@ export default function ContactForm() {
       <div className="contact-form-container">
         <div className="contact-info-section">
           <div className="footer-bg" />
-          <div className="contact-info-card">
-            <h3 className="contact-info-title">Get In Touch</h3>
+          <div className="contact-info-card" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+            <h3 className="contact-info-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Get In Touch</h3>
 
-            <div className="contact-info-item">
+            <div className="contact-info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
               <h4 className="contact-info-label">Email</h4>
               <a href="mailto:info@digiwave.com" className="contact-info-link">
                 digiwavesrilanka@gmail.com
               </a>
             </div>
 
-            <div className="contact-info-item">
+            <div className="contact-info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
               <h4 className="contact-info-label">Phone</h4>
               <a href="tel:+94774419900" className="contact-info-link">
                 +94 77 441 9900
               </a>
             </div>
 
-            <div className="contact-info-item">
+            <div className="contact-info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
               <h4 className="contact-info-label">Phone</h4>
               <a href="tel:+94719089900" className="contact-info-link">
                 +94 71 908 9900
               </a>
             </div>
 
-            <div className="contact-info-item">
+            <div className="contact-info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
               <h4 className="contact-info-label">Website</h4>
               <a
                 href="https://www.digiwave.lk"
@@ -134,7 +134,7 @@ export default function ContactForm() {
               </a>
             </div>
 
-            <div className="contact-social-icons">
+            <div className="contact-social-icons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
               <a href="#" className="contact-social-icon" aria-label="Facebook">
                 <i className="pi pi-facebook"></i>
               </a>
@@ -152,17 +152,17 @@ export default function ContactForm() {
         </div>
 
         <div className="contact-form-section-right">
-          <div className="contact-intro-headlines">
+          <div className="contact-intro-headlines" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div className="headline-bg">Contact Us</div>
             <div className="headline-fg text-left">Contact Us</div>
           </div>
-          <h2 className="contact-form-title">
+          <h2 className="contact-form-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
             Get Your <span className="text-blue">Free Quote</span> Today
           </h2>
 
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="contact-form-row">
-              <div className="contact-form-group">
+              <div className="contact-form-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <label htmlFor="firstName">First Name</label>
                 <InputText 
                   id="firstName" 
@@ -172,7 +172,7 @@ export default function ContactForm() {
                   required
                 />{' '}
               </div>
-              <div className="contact-form-group">
+              <div className="contact-form-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                 <label htmlFor="lastName">Last Name</label>
                 <InputText 
                   id="lastName" 
@@ -184,7 +184,7 @@ export default function ContactForm() {
             </div>
 
             <div className="contact-form-row">
-              <div className="contact-form-group">
+              <div className="contact-form-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                 <label htmlFor="email">Email</label>
                 <InputText 
                   type="email" 
@@ -195,7 +195,7 @@ export default function ContactForm() {
                   required
                 />{' '}
               </div>
-              <div className="contact-form-group">
+              <div className="contact-form-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
                 <label htmlFor="phone">Phone</label>
                 <InputText 
                   type="tel" 
@@ -207,7 +207,7 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="contact-form-group">
+            <div className="contact-form-group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
               <label htmlFor="message">Message</label>
               <InputTextarea 
                 id="message" 
@@ -224,6 +224,7 @@ export default function ContactForm() {
               type="submit"
               disabled={loading}
               loading={loading}
+              data-aos="fade-up" 
             />
           </form>
         </div>
@@ -235,7 +236,7 @@ export default function ContactForm() {
         visible={showModal}
         modal
         className="contact-modal"
-        style={{ width: '90vw', maxWidth: '550px' }}
+        style={{ width: '90vw', maxWidth: '420px' }}
         onHide={() => setShowModal(false)}
         header={null}
         footer={null}

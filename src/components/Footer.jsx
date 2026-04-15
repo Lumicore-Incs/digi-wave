@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer-section">
       <div className="footer-bg" />
       <div className="footer-content">
-        <div className="footer-col footer-brand pr-6">
+        <div className="footer-col footer-brand pr-6" data-aos="fade-up" data-aos-duration="1000">
           <Image
             src="/images/logo-white.png"
             alt="DigiWave Logo"
@@ -25,7 +25,7 @@ export default function Footer() {
             <span className="footer-dot" />
           </div>
         </div>
-        <div className="footer-col footer-links">
+        <div className="footer-col footer-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
           <div className="footer-title">Quick Links</div>
           <ul>
             <li>
@@ -45,7 +45,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-col footer-contact footer-links">
+        <div className="footer-col footer-contact footer-links" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           <div className="footer-title">Contact Info</div>
           <ul style={{ color: '#fff' }}>
             <li>
@@ -82,7 +82,7 @@ export default function Footer() {
     </footer>
 
     {/* Footer / Copyright Section */}
-    <footer className="public-footer">
+    <footer className="public-footer" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="600">
       <div className="footer-bottom">
         <p>© 2026 Lumicore Labs. All Rights Reserved. | Designed & Developed with Adits Technologies</p>
         <p className="footer-credits">Powered by <a href="https://piyumalnipuna60.github.io/My-Portfoliyo-2" target="_blank" rel="noopener noreferrer">Nipuna Piyumal</a></p>

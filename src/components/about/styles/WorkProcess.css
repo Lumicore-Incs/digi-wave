@@ -102,10 +102,12 @@
   text-align: center;
   position: relative;
   padding: 0 1rem;
-  animation: stepSlideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  animation-delay: var(--step-delay);
-  opacity: 0;
-  transform: translateY(40px);
+}
+
+/* We will let AOS handle the main wrap fade-up, but trigger internal animations */
+.process-step.aos-animate .step-icon {
+  animation: iconAppear 0.8s ease-out forwards;
+  animation-delay: calc(var(--step-delay) + 0.2s);
 }
 
 .step-icon-wrapper {
@@ -136,8 +138,6 @@
   
   border: 2px solid rgba(255, 255, 255, 0.6);
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation: iconAppear 0.8s ease-out forwards;
-  animation-delay: calc(var(--step-delay) + 0.2s);
   opacity: 0;
 }
 
@@ -176,11 +176,14 @@
     0 8px 20px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(0, 0, 0, 0.1);
   
-  animation: badgePopIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  animation-delay: calc(var(--step-delay) + 0.4s);
   transform: scale(0);
   z-index: 3;
   letter-spacing: -0.5px;
+}
+
+.process-step.aos-animate .step-number-badge {
+  animation: badgePopIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: calc(var(--step-delay) + 0.4s);
 }
 
 .step-glow {
@@ -192,10 +195,13 @@
   height: 130px;
   border-radius: 50%;
   background: radial-gradient(circle, var(--color-mid) 0%, transparent 70%);
-  opacity: 0.15;
+  opacity: 0;
+  z-index: 1;
+}
+
+.process-step.aos-animate .step-glow {
   animation: glowPulse 2.5s ease-in-out infinite;
   animation-delay: var(--step-delay);
-  z-index: 1;
 }
 
 .step-connector {
@@ -211,10 +217,13 @@
   );
   z-index: 0;
   margin-left: 1rem;
-  animation: connectorDraw 0.8s ease-out forwards;
-  animation-delay: var(--step-delay);
   transform: scaleX(0);
   transform-origin: left;
+}
+
+.process-step.aos-animate .step-connector {
+  animation: connectorDraw 0.8s ease-out forwards;
+  animation-delay: var(--step-delay);
 }
 
 .process-step:last-child .step-connector {

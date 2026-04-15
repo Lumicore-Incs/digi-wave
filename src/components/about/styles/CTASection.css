@@ -55,3 +55,21 @@
     width: 100%;
   }
 }
+
+.char-reveal {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(15px);
+}
+
+.aos-animate .char-reveal {
+  animation: fadeUpChar 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fadeUpChar {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

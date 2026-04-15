@@ -84,15 +84,21 @@ export default function WorkStats() {
   return (
     <section className="work-stats-section">
       <div className="work-stats-container">
-        <div className="work-stats-headline">
+        <div className="work-stats-headline" data-aos="fade-right" data-aos-duration="1000">
           <div className="headline-bg">Our Track Record</div>
           <div className="headline-fg">Our Track Record</div>
         </div>
-        <h2 className="work-stats-title">Numbers that speak to our success</h2>
+        <h2 className="work-stats-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">Numbers that speak to our success</h2>
 
         <div className="work-stats-grid" ref={statsRef}>
           {stats.map((stat, index) => (
-            <div key={index} className="work-stat-item">
+            <div 
+              key={index} 
+              className="work-stat-item"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay={400 + index * 100}
+            >
               <div className="work-stat-number">
                 {stat.number}
                 {stat.suffix}
