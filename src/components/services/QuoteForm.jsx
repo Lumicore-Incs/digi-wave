@@ -88,24 +88,24 @@ export default function QuoteForm() {
       <div className="quote-form-container">
         <div className="quote-form-left">
           <div className="footer-bg" />
-          <div className="contact-info-card">
+          <div className="contact-info-card" data-aos="fade-right" data-aos-duration="1200">
             <h3 className="contact-title">Contact Us</h3>
 
-            <div className="contact-item">
+            <div className="contact-item" data-aos="fade-up" data-aos-delay="100">
               <h4 className="contact-label">Email</h4>
               <a href="mailto:info@digiwave.com" className="contact-link">
                 info@digiwave@gmail.com
               </a>
             </div>
 
-            <div className="contact-item">
+            <div className="contact-item" data-aos="fade-up" data-aos-delay="200">
               <h4 className="contact-label">Phone</h4>
               <a href="tel:+94712345678" className="contact-link">
                 +94 77 (471) 936 9990
               </a>
             </div>
 
-            <div className="contact-item">
+            <div className="contact-item" data-aos="fade-up" data-aos-delay="300">
               <h4 className="contact-label">Website</h4>
               <a
                 href="https://www.digiwave.lk"
@@ -117,7 +117,7 @@ export default function QuoteForm() {
               </a>
             </div>
 
-            <div className="social-icons">
+            <div className="social-icons" data-aos="fade-up" data-aos-delay="400">
               <a href="#" className="social-icon" aria-label="Facebook">
                 <i className="pi pi-facebook"></i>
               </a>
@@ -135,17 +135,17 @@ export default function QuoteForm() {
         </div>
 
         <div className="quote-form-right">
-          <div className="quote-form-headlines">
+          <div className="quote-form-headlines" data-aos="fade-left">
             <div className="headline-bg">Contact Us</div>
             <div className="headline-fg">Contact Us</div>
           </div>
-          <h2 className="quote-form-title">
+          <h2 className="quote-form-title" data-aos="fade-left" data-aos-delay="100">
             Get Your <span className="text-blue">Free Quote</span> Today
           </h2>
 
           <form className="quote-form" onSubmit={handleSubmit}>
             <div className="form-row">
-              <div className="form-group">
+              <div className="form-group" data-aos="fade-up" data-aos-delay="200">
                 <label htmlFor="firstName">First Name</label>
                 <InputText
                   id="firstName"
@@ -155,7 +155,7 @@ export default function QuoteForm() {
                   required
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group" data-aos="fade-up" data-aos-delay="300">
                 <label htmlFor="lastName">Last Name</label>
                 <InputText
                   id="lastName"
@@ -167,7 +167,7 @@ export default function QuoteForm() {
             </div>
 
             <div className="form-row">
-              <div className="form-group">
+              <div className="form-group" data-aos="fade-up" data-aos-delay="400">
                 <label htmlFor="email">Email</label>
                 <InputText
                   type="email"
@@ -178,7 +178,7 @@ export default function QuoteForm() {
                   required
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group" data-aos="fade-up" data-aos-delay="500">
                 <label htmlFor="phone">Phone</label>
                 <InputText
                   type="tel"
@@ -190,7 +190,7 @@ export default function QuoteForm() {
               </div>
             </div>
 
-            <div className="form-group">
+            <div className="form-group" data-aos="fade-up" data-aos-delay="600">
               <label htmlFor="message">Message</label>
               <InputTextarea
                 id="message"
@@ -201,13 +201,15 @@ export default function QuoteForm() {
               />
             </div>
 
-            <Button
-              label={loading ? "Sending..." : "Send"}
-              className="form-submit-btn"
-              type="submit"
-              disabled={loading}
-              loading={loading}
-            />
+            {!loading && (
+              <Button
+                label="Send"
+                className="form-submit-btn"
+                type="submit"
+                data-aos="fade-up"
+                data-aos-delay="700"
+              />
+            )}
           </form>
         </div>
       </div>
@@ -218,7 +220,7 @@ export default function QuoteForm() {
         visible={showModal}
         modal
         className="quote-modal"
-        style={{ width: '90vw', maxWidth: '550px' }}
+        style={{ width: '90vw', maxWidth: '420px' }}
         onHide={() => setShowModal(false)}
         header={null}
         footer={null}

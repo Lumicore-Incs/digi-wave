@@ -30,18 +30,24 @@ export default function Testimonials() {
   return (
     <section className="testimonials-section">
       <div className="testimonials-header">
-        <div className="testimonials-headline">
+        <div className="testimonials-headline" data-aos="fade-down" data-aos-duration="1000">
           <div className="headline-bg">What Our Clients Say</div>
           <div className="headline-fg">What Our Clients Say</div>
         </div>
-        <h2 className="testimonials-title">
+        <h2 className="testimonials-title" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
           Real feedback from <span className="text-blue">real partnerships</span>
         </h2>
       </div>
       <div className="testimonials-container">
         <div className="testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-card">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={testimonial.id} 
+              className="testimonial-card"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay={400 + index * 200}
+            >
               <div className=" flex gap-3">
                 <div className="testimonial-icon">
                   <Image

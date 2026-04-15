@@ -121,11 +121,11 @@ export default function ServicesList() {
   return (
     <section className="services-list-section">
       <div className="services-list-header">
-        <div className="services-list-headlines">
+        <div className="services-list-headlines" data-aos="fade-up" data-aos-duration="1000">
           <div className="headline-bg">Our Core Services</div>
           <div className="headline-fg">Our Core Services</div>
         </div>
-        <h2 className="services-list-title">
+        <h2 className="services-list-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
           Comprehensive solutions to <span className="text-blue">elevate your brand</span>
           <br />
           <span className="text-blue">and drive results.</span>
@@ -134,25 +134,24 @@ export default function ServicesList() {
 
       <div className="services-list-container">
         {/* Service 1: Public Relations & Media Engagement */}
-        <div className="service-detail-card layout-left">
+        <div className="service-detail-card layout-left" data-aos="fade-right" data-aos-duration="1200">
           <div className="service-detail-content">
             <div className="service-detail-header">
-              <span className="service-icon background-color-01 pi pi-megaphone"></span>
-              <div>
+              <span className="service-icon background-color-01 pi pi-megaphone" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"></span>
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <h3 className="service-detail-title">Public Relations & Media Engagement</h3>
                 <h4 className="service-subtitle font-color-01">
                   Build credibility and shape your narrative with strategic media relations
                 </h4>
               </div>
             </div>
-            <p className="service-description">
+            <p className="service-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               We secure meaningful coverage across Sri Lanka&apos;s most influential media channels,
               ensuring your story reaches the right audience at the right time.
             </p>
 
             <div className="service-items">
-
-              <div className="service-items-set">
+              <div className="service-items-set" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <span className="service-item-head">Press Release Service</span>
                 <span className="item-name">
                   Drafting in English/Sinhala/Tamil, delivery to all media, minimum 8 articles
@@ -160,7 +159,7 @@ export default function ServicesList() {
                 {/* <span className="item-name item-price">Investment: Rs. 70,000</span> */}
               </div>
 
-              <div className="service-items-set mt-2">
+              <div className="service-items-set mt-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <span className="service-item-head">Press Conference Management</span>
                 <span className="item-name">
                   Full management, media invitations, spokesperson prep, minimum 10 articles
@@ -168,7 +167,7 @@ export default function ServicesList() {
                 {/* <span className="item-name item-price"> Investment: Rs. 180,000</span> */}
               </div>
 
-              <div className="service-items-set mt-2">
+              <div className="service-items-set mt-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                 <span className="service-item-head">Media Event Coverage</span>
                 <span className="item-name">
                   Strategic planning, coordination, tri-lingual releases, minimum 10 articles{' '}
@@ -190,40 +189,40 @@ export default function ServicesList() {
         </div>
 
         {/* Service 2: Digital Marketing & Social Media */}
-        <div className="service-detail-card layout-right">
+        <div className="service-detail-card layout-right" data-aos="fade-left" data-aos-duration="1200">
           <div className="service-detail-content">
             <div className="service-detail-header">
-              <span className="service-icon background-color-02 pi pi-mobile"></span>
-              <div>
+              <span className="service-icon background-color-02 pi pi-mobile" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"></span>
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <h3 className="service-detail-title">Digital Marketing & Social Media</h3>
                 <h4 className="service-subtitle font-color-02">
                   Connect with your audience where they live-online
                 </h4>
               </div>
             </div>
-            <p className="service-description">
+            <p className="service-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               We develop data-driven digital strategies that increase brand awareness, engagement,
               and conversions. Turn followers into fans and clicks into customers.
             </p>
 
-            <div className="service-features">
-              <div className="feature-item">
+            <div className="service-features" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <span className="feature-check font-color-02">✓</span>
                 <span className="feature-text">
                   Comprehensive Social Media Management & Strategy
                 </span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                 <span className="feature-check font-color-02">✓</span>
                 <span className="feature-text">
                   Targeted Digital Advertising Campaigns (Social, Search, Display)
                 </span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                 <span className="feature-check font-color-02">✓</span>
                 <span className="feature-text">Community Management & Growth</span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
                 <span className="feature-check font-color-02">✓</span>
                 <span className="feature-text">Online Reputation Management</span>
               </div>
@@ -242,42 +241,42 @@ export default function ServicesList() {
         </div>
 
         {/* Service 3: Crisis Communication */}
-        <div className="service-detail-card layout-left">
+        <div className="service-detail-card layout-left" data-aos="fade-right" data-aos-duration="1200">
           <div className="service-detail-content">
             <div className="service-detail-header">
-              <span className="service-icon background-color-03 pi pi-shield"></span>
-              <div>
+              <span className="service-icon background-color-03 pi pi-shield" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"></span>
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <h3 className="service-detail-title">Crisis Communication</h3>
                 <h4 className="service-subtitle font-color-03">
                   Protect your reputation when it matters most
                 </h4>
               </div>
             </div>
-            <p className="service-description">
+            <p className="service-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               We provide rapid, strategic counsel to navigate challenging situations and safeguard
               your brand&apos;s integrity with expert crisis management solutions.
             </p>
 
             <div className="service-items">
-              <div className="service-item service-item-03">
+              <div className="service-item service-item-03" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <span className="item-name">Crisis Management Package</span>
                 {/* <span className="item-price font-color-03">Rs 200,000 +VAT</span> */}
               </div>
-              <div className="check-list">
+              <div className="check-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <span className="feature-check font-color-03">✓</span>
                 <span className="item-name-full">24/7 Crisis Preparedness & Planning</span>
               </div>
-              <div className="check-list">
+              <div className="check-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                 <span className="feature-check font-color-03">✓</span>
                 <span className="item-name-full">Real-time Issue Monitoring & Management</span>
               </div>
-              <div className="check-list">
+              <div className="check-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                 <span className="feature-check font-color-03">✓</span>
                 <span className="item-name-full">
                   Development of Clear Communication Protocols{' '}
                 </span>
               </div>
-              <div className="check-list">
+              <div className="check-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
                 <span className="feature-check font-color-03">✓</span>
                 <span className="item-name-full"> Spokesperson Training and Message Control</span>
               </div>
@@ -296,36 +295,36 @@ export default function ServicesList() {
         </div>
 
         {/* Service 4: Event Management & Brand Activations */}
-        <div className="service-detail-card layout-right">
+        <div className="service-detail-card layout-right" data-aos="fade-left" data-aos-duration="1200">
           <div className="service-detail-content">
             <div className="service-detail-header">
-              <span className="service-icon background-color-04 pi pi-calendar-plus"></span>
-              <div>
+              <span className="service-icon background-color-04 pi pi-calendar-plus" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"></span>
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <h3 className="service-detail-title">Event Management & Brand Activations</h3>
                 <h4 className="service-subtitle font-color-04">
                   Create unforgettable experiences that bring your brand to life
                 </h4>
               </div>
             </div>
-            <p className="service-description">
+            <p className="service-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               We design and execute memorable events and activations that forge deep emotional
               connections with your target audience and create lasting brand impressions.{' '}
             </p>
 
             <div className="service-items">
-              <div className="check-list">
+              <div className="check-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <span className="feature-check font-color-04">✓</span>
                 <span className="item-name-full"> End-to-end Event Planning & Execution</span>
               </div>
-              <div className="check-list">
+              <div className="check-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <span className="feature-check font-color-04">✓</span>
                 <span className="item-name-full"> Creative Brand Activation Concepts</span>
               </div>
-              <div className="check-list">
+              <div className="check-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                 <span className="feature-check font-color-04">✓</span>
                 <span className="item-name-full">Securing comprehensive Event Media Coverage</span>
               </div>
-              <div className="check-list">
+              <div className="check-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                 <span className="feature-check font-color-04">✓</span>
                 <span className="item-name-full"> Guest & Stakeholder Management</span>
               </div>
@@ -344,39 +343,39 @@ export default function ServicesList() {
         </div>
 
         {/* Service 5: Content Creation */}
-        <div className="service-detail-card layout-left">
+        <div className="service-detail-card layout-left" data-aos="fade-right" data-aos-duration="1200">
           <div className="service-detail-content">
             <div className="service-detail-header">
-              <span className="service-icon pi pi-pencil background-color-05"></span>
-              <div>
+              <span className="service-icon pi pi-pencil background-color-05" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"></span>
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <h3 className="service-detail-title">Content Creation</h3>
                 <h4 className="service-subtitle font-color-05">
                   Tell your story with content that captivates and converts
                 </h4>
               </div>
             </div>
-            <p className="service-description">
+            <p className="service-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               Our creative team produces high-quality, multi-format content that resonates with your
               audience and supports your business goals across all platforms.
             </p>
 
-            <span className="item-name">
+            <span className="item-name" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
               Tell your story with content that engages and converts.
             </span>
             <div className="service-items">
-              <div className="service-item service-item-05">
+              <div className="service-item service-item-05" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                 <span className="item-name">Strategic Web Article Placement</span>
                 {/* <span className="item-price font-color-05">
                   Rs. 20,000/article <span className="font-color-05 pi pi-arrow-up"></span>
                 </span> */}
               </div>
-              <span className="item-name">Professional Video Production & Social Content </span>
+              <span className="item-name" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">Professional Video Production & Social Content </span>
               <section className="service-items mb-0">
-                <div className="service-item service-item-05">
+                <div className="service-item service-item-05" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                   <span className="item-name">Video Podcast & Web News  {/* Package: */}</span>
                   {/* <span className="item-price font-color-05">Rs. 170,000 - Rs. 180,000</span> */}
                 </div>
-                <div className="service-item service-item-05">
+                <div className="service-item service-item-05" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
                   <span className="item-name">Influencer-Generated Content </span>
                   {/* <span className="item-price font-color-05">
                     Rs. 20,000 <span className="font-color-05 pi pi-arrow-up"></span>
@@ -386,21 +385,21 @@ export default function ServicesList() {
             </div>
 
             <div className="service-features">
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
                 <span className="feature-check font-color-05">✓</span>
                 <span className="feature-text ">
                   Compelling Copywriting for ads, websites, and blogs
                 </span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000">
                 <span className="feature-check font-color-05">✓</span>
                 <span className="feature-text">Professional Video Production & Editing</span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1100">
                 <span className="feature-check font-color-05">✓</span>
                 <span className="feature-text">Strategic Brand Journalism</span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200">
                 <span className="feature-check font-color-05">✓</span>
                 <span className="feature-text">Engaging Graphic Design & Multimedia Content</span>
               </div>
@@ -419,30 +418,30 @@ export default function ServicesList() {
         </div>
 
         {/* Service 6: Investor & Stakeholder Communications */}
-        <div className="service-detail-card layout-right">
+        <div className="service-detail-card layout-right" data-aos="fade-left" data-aos-duration="1200">
           <div className="service-detail-content">
             <div className="service-detail-header">
-              <span className="service-icon pi pi-file-import background-color-06"></span>
-              <div>
+              <span className="service-icon pi pi-file-import background-color-06" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"></span>
+              <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <h3 className="service-detail-title">Investor & Stakeholder Communications</h3>
                 <h4 className="service-subtitle font-color-06">
                   Build trust and transparency with your most important audiences
                 </h4>
               </div>
             </div>
-            <p className="service-description">
+            <p className="service-description" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
               We craft clear, consistent messaging to keep your investors, partners, and key
               stakeholders informed, engaged, and confident in your vision.
             </p>
 
             <div className="service-packages">
-              <h5 className="packages-title">Our Core Investor Relations Packages</h5>
+              <h5 className="packages-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Our Core Investor Relations Packages</h5>
               <section className="service-items">
-                <div className="service-item service-item-06">
+                <div className="service-item service-item-06" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                   <span className="item-name">Annual Report & Financial Communications</span>
                   {/* <span className="item-price font-color-06">Rs. 300,000 + VAT</span> */}
                 </div>
-                <div className="service-item service-item-06">
+                <div className="service-item service-item-06" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                   <span className="item-name">Stakeholder Briefing & Press Release Package</span>
                   {/* <span className="item-price font-color-06">Rs. 70,000</span> */}
                 </div>
@@ -450,21 +449,21 @@ export default function ServicesList() {
             </div>
 
             <div className="service-features">
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                 <span className="feature-check font-color-06">✓</span>
                 <span className="feature-text">
                   Development of Annual Reports & Financial Communications{' '}
                 </span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
                 <span className="feature-check font-color-06">✓</span>
                 <span className="feature-text">Stakeholder Mapping & Engagement Strategies</span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
                 <span className="feature-check font-color-06">✓</span>
                 <span className="feature-text">Internal Communications Support</span>
               </div>
-              <div className="feature-item">
+              <div className="feature-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000">
                 <span className="feature-check font-color-06">✓</span>
                 <span className="feature-text">
                   ESG (Environmental, Social, Governance) Reporting{' '}

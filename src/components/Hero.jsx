@@ -1,5 +1,6 @@
 'use client';
 import { Button } from 'primereact/button';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import ParticleAnimation from './ParticleAnimation';
@@ -43,10 +44,24 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero">
-      <div
-        className={`hero-bg ${fade ? 'fade-in' : 'fade-out'}`}
-        style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
-      ></div>
+      <div className="hero-bg-container">
+        {bgImages.map((src, index) => (
+          <div
+            key={src}
+            className={`hero-bg-image ${index === bgIndex ? 'active' : ''} ${fade ? '' : 'fading'}`}
+          >
+            <Image
+              src={src}
+              alt="Hero Background"
+              fill
+              priority={index === 0}
+              quality={85}
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        ))}
+      </div>
       <ParticleAnimation />
       <div className="hero-overlay">
         <div className="hero-container">

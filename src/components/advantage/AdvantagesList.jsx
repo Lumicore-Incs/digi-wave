@@ -53,12 +53,12 @@ export default function AdvantagesList() {
 
   return (
     <section className="advantages-list-section">
-      <div className="advantages-list-header">
-        <div className="advantages-list-headlines">
+      <div className="advantages-list-header" data-aos="fade-down" data-aos-duration="1200">
+        <div className="advantages-list-headlines" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
           <div className="headline-bg font-bold">Why Partner with DigiWave?</div>
           <div className="headline-fg font-bold">Why Partner with DigiWave?</div>
         </div>
-        <h2 className="advantages-list-title">
+        <h2 className="advantages-list-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           Five compelling reasons that <span className="text-blue">set us apart from the</span>
           <br />
           <span className="text-blue">competition</span>
@@ -70,10 +70,18 @@ export default function AdvantagesList() {
           <div
             key={advantage.id}
             className={`advantage-card ${index % 2 === 0 ? 'layout-left' : 'layout-right'}`}
+            data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+            data-aos-duration="1000"
+            data-aos-offset="200"
           >
             <div className="advantage-content">
               <div className="flex align-items-center gap-3">
-                <div className={`advantage-icon-wrapper bg-${advantage.color}`}>
+                <div 
+                  className={`advantage-icon-wrapper bg-${advantage.color}`}
+                  data-aos="zoom-in"
+                  data-aos-duration="800"
+                  data-aos-delay="500"
+                >
                   <span className="advantage-icon">{advantage.icon}</span>
                 </div>
                 <h3 className="advantage-title">{advantage.title}</h3>
@@ -88,6 +96,7 @@ export default function AdvantagesList() {
                 width={500}
                 height={350}
                 className="advantage-img"
+                sizes="(max-width: 1024px) 100vw, 500px"
               />
             </div>
           </div>
