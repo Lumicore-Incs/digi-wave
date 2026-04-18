@@ -18,16 +18,17 @@
   --primary-800: #003486;
   --primary-900: #002b6e;
 
-  /* Typography */
+  /* Fluid Typography */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
-  --font-size-4xl: 2.25rem;
-  --font-size-5xl: 3rem;
+  --font-size-2xl: clamp(1.25rem, 2vw + 1rem, 1.5rem);
+  --font-size-3xl: clamp(1.5rem, 3vw + 1rem, 1.875rem);
+  --font-size-4xl: clamp(2rem, 4vw + 1rem, 2.75rem);
+  --font-size-5xl: clamp(2.5rem, 6vw + 1rem, 4.5rem);
+  --font-size-display: clamp(3rem, 8vw + 1rem, 6rem);
 
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -85,36 +86,37 @@ body {
   line-height: 1.6;
   color: #000000;
   background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Reset & Heading Rules */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .section-title, .headline-fg,
+.about-headline, .services-headline, .contact-hero-title {
+  overflow-wrap: break-word; /* Allows long words to break if necessary to prevent overflow */
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance; /* Modern standard for headings */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+p, .text-muted {
+  text-wrap: pretty; /* Prevents orphans in paragraphs */
 }
 
 /* Typography Classes */
-.text-xs {
-  font-size: var(--font-size-xs);
-}
-.text-sm {
-  font-size: var(--font-size-sm);
-}
-.text-base {
-  font-size: var(--font-size-base);
-}
-.text-lg {
-  font-size: var(--font-size-lg);
-}
-.text-xl {
-  font-size: var(--font-size-xl);
-}
-.text-2xl {
-  font-size: var(--font-size-2xl);
-}
-.text-3xl {
-  font-size: var(--font-size-3xl);
-}
-.text-4xl {
-  font-size: var(--font-size-4xl);
-}
-.text-5xl {
-  font-size: var(--font-size-5xl);
-}
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+.text-5xl { font-size: var(--font-size-5xl); }
+.text-display { font-size: var(--font-size-display); }
 
 .font-light {
   font-weight: var(--font-weight-light);

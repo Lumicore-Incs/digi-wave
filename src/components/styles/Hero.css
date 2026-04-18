@@ -40,9 +40,12 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   letter-spacing: -0.02em;
   margin: 0;
-  display: inline-block;
+  display: block; /* Changed from inline-block to block for better wrapping */
   position: relative;
+  text-wrap: balance;
 }
+
+/* ... existing glitch styles ... */
 
 .glitch-window {
   position: absolute;
@@ -53,6 +56,7 @@
   text-shadow: 2px 0 #080808, -1px 0 yellow, -2px 0 green;
   overflow: hidden;
   animation: crt-me 2500ms infinite linear alternate-reverse;
+  white-space: nowrap; /* Keep glitch layer on one line to match base if balanced */
 }
 
 @keyframes crt-me {
@@ -72,13 +76,14 @@
 /* ========== END ANIMATED TITLE STYLES ========== */
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.7;
   color: #d3eafe;
   font-style: italic;
   margin: 1.5rem 0 0.5rem 0;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
   animation: fadeInUp 0.8s ease-out 0.3s both;
+  text-wrap: pretty;
 }
 
 .cta-buttons {
@@ -128,16 +133,11 @@
   }
 
   .hero-title {
-    font-size: 2.75rem;
     margin-bottom: 0.5rem;
     text-align: center;
-    display: block;
   }
 
-
-
   .hero-subtitle {
-    font-size: 1rem;
     margin: 1.5rem 0 1.5rem 0;
     text-align: center;
   }
