@@ -93,15 +93,22 @@ export default function QuoteForm() {
 
             <div className="contact-item" data-aos="fade-up" data-aos-delay="100">
               <h4 className="contact-label">Email</h4>
-              <a href="mailto:info@digiwave.com" className="contact-link">
-                info@digiwave@gmail.com
+              <a href="mailto:digiwavesrilanka@gmail.com" className="contact-link">
+                digiwavesrilanka@gmail.com
               </a>
             </div>
 
             <div className="contact-item" data-aos="fade-up" data-aos-delay="200">
               <h4 className="contact-label">Phone</h4>
-              <a href="tel:+94712345678" className="contact-link">
-                +94 77 (471) 936 9990
+              <a href="tel:+94774419900" className="contact-link">
+                +94 77 441 9900
+              </a>
+            </div>
+
+             <div className="contact-info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+              <h4 className="contact-info-label">Phone</h4>
+              <a href="tel:+94719089900" className="contact-info-link">
+                +94 71 908 9900
               </a>
             </div>
 

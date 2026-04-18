@@ -103,7 +103,7 @@ export default function ContactForm() {
 
             <div className="contact-info-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
               <h4 className="contact-info-label">Email</h4>
-              <a href="mailto:info@digiwave.com" className="contact-info-link">
+              <a href="mailto:digiwavesrilanka@gmail.com" className="contact-info-link">
                 digiwavesrilanka@gmail.com
               </a>
             </div>

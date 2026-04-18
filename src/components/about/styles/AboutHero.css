@@ -26,12 +26,13 @@
 }
 
 .about-hero-title {
-  font-size: 3.5rem;
+  font-size: var(--font-size-display);
   font-weight: 700;
   color: white;
   position: relative;
-  display: inline-block;
+  display: block;
   margin-bottom: 1rem;
+  text-wrap: balance;
 }
 
 .char-reveal {
@@ -77,17 +78,18 @@
 }
 
 .about-hero-subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.95);
+  text-wrap: pretty;
 }
 
 @media (max-width: 768px) {
   .about-hero-title {
-    font-size: 2.5rem;
+    /* Fluid typography handled by variable */
   }
 
   .about-hero-subtitle {
-    font-size: 1rem;
+    /* Fluid typography handled by clamp */
   }
 }
