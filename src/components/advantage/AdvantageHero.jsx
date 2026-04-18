@@ -5,13 +5,30 @@ export default function AdvantageHero() {
   const title = "Your Unfair Advantage in the Market";
 
   const renderTitle = () => {
-    return title.split('').map((char, index) => (
-      <span
-        key={index}
-        className="char-reveal"
-        style={{ animationDelay: `${index * 0.05}s` }}
-      >
-        {char === ' ' ? '\u00A0' : char}
+    return title.split(' ').map((word, wordIndex, wordsArray) => (
+      <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+        {word.split('').map((char, charIndex) => {
+          const previousWordsLength = wordsArray.slice(0, wordIndex).join(' ').length;
+          const globalIndex = wordIndex === 0 ? charIndex : previousWordsLength + 1 + charIndex;
+          
+          return (
+            <span
+              key={charIndex}
+              className="char-reveal"
+              style={{ animationDelay: `${globalIndex * 0.05}s` }}
+            >
+              {char}
+            </span>
+          );
+        })}
+        {wordIndex < wordsArray.length - 1 && (
+          <span 
+            className="char-reveal" 
+            style={{ animationDelay: `${(wordsArray.slice(0, wordIndex + 1).join(' ').length) * 0.05}s` }}
+          >
+            &nbsp;
+          </span>
+        )}
       </span>
     ));
   };

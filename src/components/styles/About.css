@@ -44,10 +44,11 @@
 }
 
 .about-headline {
-  font-size: 2rem;
+  font-size: var(--font-size-4xl);
   font-weight: 700;
   margin-bottom: 2.5rem;
   color: #222;
+  text-wrap: balance;
 }
 .about-headline-bold {
   color: #222;
@@ -154,12 +155,13 @@
 }
 
 .about-feature-title {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 0.75rem;
   transition: color 0.3s ease;
   line-height: 1.4;
+  text-wrap: balance;
 }
 
 .about-feature-card:hover .about-feature-title {
@@ -183,17 +185,19 @@
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: var(--font-size-5xl);
   font-weight: 700;
   margin-bottom: 1rem;
   color: #000000;
+  text-wrap: balance;
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
   color: #666666;
   max-width: 600px;
   margin: 0 auto;
+  text-wrap: pretty;
 }
 
 .services-grid {

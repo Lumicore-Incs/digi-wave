@@ -35,7 +35,8 @@
   margin-bottom: 2rem;
   color: white;
   position: relative;
-  display: inline-block;
+  display: block;
+  text-wrap: balance;
 }
 
 .char-reveal {
@@ -81,17 +82,18 @@
 }
 
 .contact-hero-subtitle {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.95);
+  text-wrap: pretty;
 }
 
 @media (max-width: 768px) {
   .contact-hero-title {
-    font-size: 2rem;
+    /* Fluid size handled by variable */
   }
 
   .contact-hero-subtitle {
-    font-size: 1rem;
+    /* Fluid size handled by clamp */
   }
 }

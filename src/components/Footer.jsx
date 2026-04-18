@@ -82,7 +82,7 @@ export default function Footer() {
     </footer>
 
     {/* Footer / Copyright Section */}
-    <footer className="public-footer" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="600">
+    <footer className="public-footer">
       <div className="footer-bottom">
         <p>© 2026 Lumicore Labs. All Rights Reserved. | Designed & Developed with Adits Technologies</p>
         <p className="footer-credits">Powered by <a href="https://piyumalnipuna60.github.io/My-Portfoliyo-2" target="_blank" rel="noopener noreferrer">Nipuna Piyumal</a></p>
