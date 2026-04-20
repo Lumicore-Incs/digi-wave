@@ -27,7 +27,7 @@ function Header() {
       <div className="header-content">
         <div className="logo-section">
           <Image
-            src="/images/logo-blue.png"
+            src="/images/logo-white.png"
             alt="DigiWave Logo"
             width={180}
             height={60}

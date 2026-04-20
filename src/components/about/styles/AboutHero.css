@@ -28,6 +28,7 @@
 .about-hero-title {
   font-size: var(--font-size-display);
   font-weight: 700;
+  font-size: 3rem;
   color: white;
   position: relative;
   display: block;
