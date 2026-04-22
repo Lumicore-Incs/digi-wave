@@ -34,6 +34,19 @@ export default function About() {
 
   return (
     <section className="about-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
+      {/* Bubble Animation Background */}
+      <ul className="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
       <div className="relative team-headline">
         <div className="headline-bg">Innovate. Elevate. Excel.</div>
         <div className="headline-fg">Innovate. Elevate. Excel.</div>
