@@ -27,13 +27,39 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="services-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
+    <section
+      id="services"
+      className="services-section"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-easing="ease-out-cubic"
+      data-aos-once="true"
+    >
+
+      {/* ✅ Ripple Background */}
+      <div className="ripple-background">
+        {/* Left Top */}
+        <div className="circle xxlarge shade1"></div>
+        <div className="circle xlarge shade2"></div>
+        <div className="circle large shade3"></div>
+        <div className="circle medium shade4"></div>
+        <div className="circle small shade5"></div>
+
+        {/* Right Bottom */}
+        <div className="circle-opp xxlarge shade1"></div>
+        <div className="circle-opp xlarge shade2"></div>
+        <div className="circle-opp large shade3"></div>
+        <div className="circle-opp medium shade4"></div>
+        <div className="circle-opp small shade5"></div>
+      </div>
+
       <div className="relative team-headline">
         <div className="headline-bg">Our Core Services</div>
         <div className="headline-fg">Our Core Services</div>
       </div>
+
       <div className="services-container">
-        <h2 
+        <h2
           className="services-headline font-bald"
           data-aos="fade-up"
           data-aos-duration="800"
@@ -41,21 +67,24 @@ export default function Services() {
           data-aos-once="true"
         >
           Innovative Paths to{' '}
-          <span className="services-headline-highlight">Digital Transformation</span>
+          <span className="services-headline-highlight">
+            Digital Transformation
+          </span>
         </h2>
+
         <div className="services-grid">
           {services.map((service, idx) => (
-            <div 
-              className="service-card" 
-              key={idx} 
-              data-aos="fade-up" 
-              data-aos-delay={idx * 150}
+            <div
+              className="service-card"
+              key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 200}
               data-aos-duration="1000"
               data-aos-easing="ease-out-cubic"
               data-aos-once="true"
             >
               <div className="service-icons">
-                <Image src={service.icon} alt={service.title + ' icon'} width={32} height={32} />
+                <Image src={service.icon} alt={service.title} width={32} height={32} />
               </div>
               <div className="service-title">{service.title}</div>
               <div className="service-description">{service.description}</div>

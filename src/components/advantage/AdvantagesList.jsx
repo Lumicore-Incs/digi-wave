@@ -76,7 +76,7 @@ export default function AdvantagesList() {
           >
             <div className="advantage-content">
               <div className="flex align-items-center gap-3">
-                <div 
+                <div
                   className={`advantage-icon-wrapper bg-${advantage.color}`}
                   data-aos="zoom-in"
                   data-aos-duration="800"

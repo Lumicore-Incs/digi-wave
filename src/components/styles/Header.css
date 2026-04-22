@@ -342,10 +342,14 @@
   }
 }
 
-/* ── Keep old navItemEmerge for any existing usage ── */
+/* ── Nav click animation — triggered via JS class toggle ── */
+.nav-click-anim {
+  animation: navItemEmerge 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
 @keyframes navItemEmerge {
-  0%   { transform: translateY(0);    opacity: 1; }
-  30%  { transform: translateY(-15px); opacity: 0; }
-  50%  { transform: translateY(15px);  opacity: 0; }
-  100% { transform: translateY(0);    opacity: 1; }
+  0%   { transform: translateY(0);     opacity: 1; }
+  30%  { transform: translateY(-12px); opacity: 0; }
+  50%  { transform: translateY(14px);  opacity: 0; }
+  100% { transform: translateY(0);     opacity: 1; }
 }

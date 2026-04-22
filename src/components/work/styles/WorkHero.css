@@ -2,12 +2,50 @@
   position: relative;
   height: 80vh;
   min-height: 350px;
-  background-image: url('/our-work/our-work-hero.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+/* Background image on ::before enables independent scale transform */
+.work-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/our-work/our-work-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Diagonal overlay: expands from top-right & bottom-left corners simultaneously */
+.work-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(21, 56, 133, 0.5) 0%,
+    rgba(37, 99, 235, 0.26) 50%,
+    rgba(21, 56, 133, 0.5) 100%
+  );
+  clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 0% 100%);
+  transition: clip-path 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.work-hero:hover::before {
+  transform: scale(1.04);
+}
+
+.work-hero:hover::after {
+  clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%);
 }
 
 .work-hero-overlay {
@@ -16,6 +54,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
   background: linear-gradient(
     90deg,
     rgba(21, 56, 133, 0.3318) 0%,
@@ -32,8 +71,9 @@
 .work-hero-content {
   text-align: center;
   color: white;
-  z-index: 1;
+  z-index: 3;
   padding: 2rem;
+  position: relative;
 }
 
 .work-hero-title {
