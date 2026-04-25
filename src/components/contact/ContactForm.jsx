@@ -220,7 +220,7 @@ export default function ContactForm() {
 
             <Button 
               label={loading ? "Sending..." : "Send"} 
-              className="contact-form-submit-btn"
+              className="btn btn-primary2 btn-glow"
               type="submit"
               disabled={loading}
               loading={loading}

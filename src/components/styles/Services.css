@@ -74,7 +74,8 @@
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 70, 182, 0.08);
+   border: 1px solid rgba(91, 136, 207, 0.28);
+  box-shadow: 0px 5px 10px 0px rgba(134, 198, 235, 0.918);
   position: relative;
   overflow: hidden;
   cursor: pointer;

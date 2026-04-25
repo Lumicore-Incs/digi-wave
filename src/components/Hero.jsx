@@ -5,21 +5,20 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import ParticleAnimation from './ParticleAnimation';
 import './styles/Hero.css';
+import './styles/btn-glow.css'; // ← single import makes it available site-wide
+                                 //   (or move to globals.css / layout.tsx once)
 
 export default function Hero() {
   const router = useRouter();
-  
-  // Background images for rotation
+
   const bgImages = [
     '/images/hero-background-1.jpg',
     '/images/hero-background-2.jpg',
     '/images/hero-background-3.jpg',
   ];
-
   const [bgIndex, setBgIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
-  // Background rotation effect
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);
@@ -31,9 +30,8 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [bgImages.length]);
 
-  // Render title with animated characters
   const renderAnimatedTitle = () => {
-    const title = "Innovation in Every Wave";
+    const title = 'Innovation in Every Wave';
     return (
       <h1 className="hero-title glitched">
         {title}
@@ -62,21 +60,28 @@ export default function Hero() {
           </div>
         ))}
       </div>
+
       <ParticleAnimation />
+
       <div className="hero-overlay">
         <div className="hero-container">
           <div className="hero-content" data-aos="fade-up">
             {renderAnimatedTitle()}
             <p className="hero-subtitle">who you are, what you do.</p>
+
             <div className="cta-buttons">
-              <Button 
-                label="Get In Touch" 
-                className="btn btn-primary"
+              {/*
+                btn-glow is already on both buttons.
+                No other change needed — colour, padding, text are untouched.
+              */}
+              <Button
+                label="Get In Touch"
+                className="btn btn-primary2 btn-glow"
                 onClick={() => router.push('/about')}
               />
-              <Button 
-                label="Contact Us" 
-                className="btn btn-secondary"
+              <Button
+                label="Contact Us"
+                className="btn btn-secondary btn-glow"
                 onClick={() => router.push('/contact')}
               />
             </div>

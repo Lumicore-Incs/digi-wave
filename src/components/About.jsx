@@ -34,8 +34,10 @@ export default function About() {
 
   return (
     <section className="about-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
-      {/* Bubble Animation Background */}
-      <ul className="bg-bubbles">
+      {/* Jelly Bubble Animation Background */}
+      <ul className="bg-jelly-bubbles">
+        <li></li>
+        <li></li>
         <li></li>
         <li></li>
         <li></li>

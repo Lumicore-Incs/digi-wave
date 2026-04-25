@@ -102,6 +102,8 @@
   animation: fadeInUp 0.8s ease-out 0.5s both;
 }
 
+
+
 /* Fade in up animation for supporting elements */
 @keyframes fadeInUp {
   from {

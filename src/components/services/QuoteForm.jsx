@@ -211,7 +211,7 @@ export default function QuoteForm() {
             {!loading && (
               <Button
                 label="Send"
-                className="form-submit-btn"
+                className="btn btn-primary2 btn-glow"
                 type="submit"
                 data-aos="fade-up"
                 data-aos-delay="700"
