@@ -98,6 +98,7 @@
 @media (max-width: 768px) {
   .advantage-hero-title {
     font-size: 2rem;
+    font-family: 'Inter';
   }
 
   .advantage-hero-subtitle {

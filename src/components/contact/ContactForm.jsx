@@ -138,7 +138,7 @@ export default function ContactForm() {
             </div>
 
             <div className="contact-social-icons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
-              <a href="#" className="contact-social-icon" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61580452866043" className="contact-social-icon" aria-label="Facebook">
                 <i className="pi pi-facebook"></i>
               </a>
               <a href="#" className="contact-social-icon" aria-label="Twitter">
@@ -149,6 +149,9 @@ export default function ContactForm() {
               </a>
               <a href="#" className="contact-social-icon" aria-label="Instagram">
                 <i className="pi pi-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@wickramanayake" className="contact-social-icon" aria-label="youtube">
+                <i className="pi pi-youtube"></i>
               </a>
             </div>
           </div>

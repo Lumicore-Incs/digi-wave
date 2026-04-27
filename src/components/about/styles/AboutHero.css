@@ -126,6 +126,7 @@
 @media (max-width: 768px) {
   .about-hero-title {
     /* Fluid typography handled by variable */
+    font-family: 'Inter';
   }
 
   .about-hero-subtitle {

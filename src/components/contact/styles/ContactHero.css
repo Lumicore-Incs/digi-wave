@@ -130,7 +130,7 @@
 
 @media (max-width: 768px) {
   .contact-hero-title {
-    /* Fluid size handled by variable */
+    font-family: 'Inter'!important;
   }
 
   .contact-hero-subtitle {

@@ -128,17 +128,20 @@ export default function QuoteForm() {
             </div>
 
             <div className="social-icons" data-aos="fade-up" data-aos-delay="400">
-              <a href="#" className="social-icon" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61580452866043" className="social-icon" aria-label="Facebook">
                 <i className="pi pi-facebook"></i>
               </a>
-              <a href="#" className="social-icon" aria-label="Twitter">
+              <a href="" className="social-icon" aria-label="Twitter">
                 <i className="pi pi-twitter"></i>
               </a>
-              <a href="#" className="social-icon" aria-label="LinkedIn">
+              <a href="" className="social-icon" aria-label="LinkedIn">
                 <i className="pi pi-linkedin"></i>
               </a>
-              <a href="#" className="social-icon" aria-label="Instagram">
+              <a href="" className="social-icon" aria-label="Instagram">
                 <i className="pi pi-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@wickramanayake" className="social-icon" aria-label="youtube">
+                <i className="pi pi-youtube"></i>
               </a>
             </div>
           </div>

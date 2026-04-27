@@ -45,8 +45,10 @@ export default function ContactProcess() {
                 key={index} 
                 className="contact-process-step"
                 data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay={400 + index * 100}
+                data-aos-delay={index * 150}
+                data-aos-duration="1000"
+                data-aos-easing="ease-out-cubic"
+                data-aos-once="true"
               >
                 <div className="contact-step-icon-wrapper">
                   <div className="contact-step-icon">
