@@ -6,6 +6,7 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import { Toast } from 'primereact/toast';
 import { Dialog } from 'primereact/dialog';
 import { useRef } from 'react';
+import NetworkBackground from '../NetworkBackground';
 import './styles/QuoteForm.css';
 
 export default function QuoteForm() {
@@ -85,6 +86,8 @@ export default function QuoteForm() {
 
   return (
     <section className="quote-form-section">
+      {/* Particle canvas background */}
+      <NetworkBackground />
       <div className="quote-form-container">
         <div className="quote-form-left">
           <div className="footer-bg" />

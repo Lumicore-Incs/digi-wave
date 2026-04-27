@@ -1,12 +1,29 @@
 .company-network-section {
   padding: 5rem 2rem;
   background: #f0f2f5;
+  /* Required for canvas positioning */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Canvas particle background */
+.network-bg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .company-network-container {
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+  /* Sit above canvas */
+  position: relative;
+  z-index: 1;
 }
 
 .network-subtitle-headline {
@@ -70,7 +87,8 @@
   color: white;
   min-width: 250px;
   max-width: 280px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(91, 136, 207, 0.28);
+  box-shadow: 0px 5px 10px 0px rgba(134, 198, 235, 0.918);
 }
 
 .division-node.division-events .division-title {
@@ -130,6 +148,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  border: 1px solid rgba(91, 136, 207, 0.28);
+  box-shadow: 0px 5px 10px 0px rgba(134, 198, 235, 0.218);
 }
 
 .item-icon {
@@ -153,10 +173,10 @@
 }
 
 .division-list li:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(119, 192, 235, 0.88);
   transform: translateX(4px);
 }
-/* 
+
 /* PrimeReact OrganizationChart Customization */
 .org-chart-wrapper .p-organizationchart {
   overflow: visible;
@@ -210,7 +230,6 @@
     overflow-x: visible;
   }
 
-  /* Force vertical stacking of all nodes */
   .org-chart-wrapper .p-organizationchart {
     display: flex !important;
     flex-direction: column !important;
@@ -223,27 +242,27 @@
     flex-direction: column !important;
     width: 100% !important;
   }
-  
+
   .org-chart-wrapper .p-organizationchart tbody {
     display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
   }
-  
+
   .org-chart-wrapper .p-organizationchart tr {
     display: flex !important;
     flex-direction: column !important;
-    width: 100% !important;  }
+    width: 100% !important;
+  }
 
-    .org-chart-wrapper {
+  .org-chart-wrapper {
     padding-bottom: 2rem;
   }
-  
+
   .org-chart-wrapper .p-organizationchart td {
     width: 100% !important;
   }
 
-  /* Ensure children row stacks vertically */
   .org-chart-wrapper .p-organizationchart tr:last-child {
     display: flex !important;
     flex-direction: column !important;
@@ -251,7 +270,6 @@
     gap: 1.5rem !important;
   }
 
-  /* Hide all connecting lines */
   .org-chart-wrapper .p-organizationchart-lines,
   .org-chart-wrapper .p-organizationchart-line-down,
   .org-chart-wrapper .p-organizationchart-line-left,

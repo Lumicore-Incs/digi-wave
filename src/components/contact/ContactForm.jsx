@@ -6,6 +6,7 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import { Toast } from 'primereact/toast';
 import { Dialog } from 'primereact/dialog';
 import { useRef } from 'react';
+import NetworkBackground from '../NetworkBackground';
 import './styles/ContactForm.css';
 
 export default function ContactForm() {
@@ -84,6 +85,8 @@ export default function ContactForm() {
   };
   return (
     <section className="contact-form-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
+      {/* Particle canvas background */}
+      <NetworkBackground />
       <div className="contact-intro">
         <div className="contact-intro-headlines">
           <div className="headline-bg">We&apos;re Here to Help</div>

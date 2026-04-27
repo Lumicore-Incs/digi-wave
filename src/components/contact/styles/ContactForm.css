@@ -1,11 +1,16 @@
 .contact-form-section {
   padding: 5rem 0rem;
   background: #f7f8f9;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .contact-intro {
   text-align: center;
   margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-intro-text {
@@ -24,6 +29,8 @@
   gap: 4rem;
   padding: 5rem 2rem;
   background: #f7f8f9;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info-section {

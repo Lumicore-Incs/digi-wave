@@ -46,6 +46,21 @@ export default function ProjectShowcaseCarosal() {
 
   return (
     <section className="project-carousel-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
+      {/* Ripple Background */}
+      <div className="ripple-background">
+        <div className="circle xxlarge shade1"></div>
+        <div className="circle xlarge shade2"></div>
+        <div className="circle large shade3"></div>
+        <div className="circle medium shade4"></div>
+        <div className="circle small shade5"></div>
+
+        <div className="circle-opp xxlarge shade1"></div>
+        <div className="circle-opp xlarge shade2"></div>
+        <div className="circle-opp large shade3"></div>
+        <div className="circle-opp medium shade4"></div>
+        <div className="circle-opp small shade5"></div>
+      </div>
+
       <div className="project-carousel-container">
         <div className="carousel-header">
           <div className="carousel-headlines" data-aos="fade-left" data-aos-duration="1000">

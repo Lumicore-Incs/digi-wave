@@ -1,6 +1,9 @@
 .quote-form-section {
   padding: 5rem 2rem;
   background: #f7f8f9;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .quote-form-container {
@@ -9,6 +12,8 @@
   display: grid;
   grid-template-columns: 350px 1fr;
   gap: 4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .quote-form-left {
