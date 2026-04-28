@@ -5,13 +5,28 @@ export default function ServicesHero() {
   const title = "Amplify Your Brand. Ignite Your Growth.";
 
   const renderTitle = () => {
-    return title.split('').map((char, index) => (
-      <span
-        key={index}
-        className="char-reveal"
-        style={{ animationDelay: `${index * 0.05}s` }}
-      >
-        {char === ' ' ? '\u00A0' : char}
+    let charCount = 0;
+    const words = title.split(' ');
+    return words.map((word, wordIndex) => (
+      <span key={wordIndex} className="word-wrapper" style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+        {word.split('').map((char, charIndex) => {
+          const delay = charCount * 0.05;
+          charCount++;
+          return (
+            <span
+              key={charIndex}
+              className="char-reveal"
+              style={{ animationDelay: `${delay}s` }}
+            >
+              {char}
+            </span>
+          );
+        })}
+        {wordIndex < words.length - 1 && (
+          <span className="char-reveal" style={{ animationDelay: `${charCount++ * 0.05}s` }}>
+            &nbsp;
+          </span>
+        )}
       </span>
     ));
   };

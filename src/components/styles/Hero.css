@@ -36,7 +36,7 @@
   font-weight: 700;
   line-height: 1.1;
   color: #fff;
-  font-family: 'Inter';
+  font-family: 'Avenir';
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   letter-spacing: -0.02em;
   margin: 0;
@@ -101,6 +101,8 @@
   cursor: pointer;
   animation: fadeInUp 0.8s ease-out 0.5s both;
 }
+
+
 
 /* Fade in up animation for supporting elements */
 @keyframes fadeInUp {
@@ -213,6 +215,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
+  overflow: hidden;
   transition: opacity 1.2s ease-in-out;
 }
 
@@ -228,6 +231,36 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+  transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ========== HERO IMAGE HOVER ANIMATION ========== */
+
+/* Diagonal overlay: starts as zero-area line from top-right → bottom-left,
+   expands simultaneously from both corners to fill the full image */
+.hero-bg-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(21, 56, 133, 0.52) 0%,
+    rgba(37, 99, 235, 0.28) 50%,
+    rgba(21, 56, 133, 0.52) 100%
+  );
+  clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 0% 100%);
+  transition: clip-path 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.hero:hover .hero-bg-image.active::before {
+  clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%);
+}
+
+/* Subtle zoom on the active background image */
+.hero:hover .hero-bg-image.active img {
+  transform: scale(1.04);
 }
 
 .hero-bg::after {

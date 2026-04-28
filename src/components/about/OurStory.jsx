@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import '../styles/btn-glow.css';
 import './styles/OurStory.css';
 
 export default function OurStory() {
@@ -115,15 +116,15 @@ export default function OurStory() {
           </p>
 
           <div className="our-story-stats" ref={statsRef}>
-            <div className="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+            <div className="stat-item btn-glow" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
               <div className="stat-number">{clients}+</div>
               <div className="stat-label">Clients</div>
             </div>
-            <div className="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+            <div className="stat-item btn-glow" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
               <div className="stat-number">{projects}+</div>
               <div className="stat-label">Projects</div>
             </div>
-            <div className="stat-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
+            <div className="stat-item btn-glow" data-aos="fade-up" data-aos-duration="800" data-aos-delay="800">
               <div className="stat-number">{retention}%</div>
               <div className="stat-label">Retention Rate</div>
             </div>

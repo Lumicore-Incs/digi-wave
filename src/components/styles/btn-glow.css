@@ -1,0 +1,180 @@
+/* ============================================================
+   BTN-GLOW.CSS — Reusable Animated Glow Border
+   Usage: Add class `btn-glow` to any button.
+          Override --glow-primary / --glow-secondary per-button
+          to change the sweep colour without re-defining keyframes.
+   ============================================================ */
+
+/* Register the angle so the browser can tween it smoothly */
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ── Base setup ─────────────────────────────────────── */
+.btn-glow {
+  /* Colour tokens — override these per variant */
+  --glow-primary:   #2a9cfa;   /* main sweep colour         */
+  --glow-secondary: #93c5fd;   /* highlight at peak         */
+  --glow-accent:    #2563eb;   /* trailing edge             */
+  --glow-width:     2px;       /* border thickness          */
+  --glow-speed:     3s;        /* rotation duration         */
+  --glow-blur:      8px;       /* outer soft-glow spread    */
+
+  position: relative;
+  /* isolation prevents the negative-z children from bleeding
+     outside a stacking-context boundary (e.g. overflow:hidden parent) */
+  isolation: isolate;
+  /* overflow hidden is NOT set here — that would clip the soft outer
+     glow.  The pseudo-elements are kept inside with z-index instead. */
+}
+
+/* ── Spinning border sweep ──────────────────────────── */
+/*
+  Technique: inset:0 + padding equal to border width + mask.
+  The mask punches out the content area so only the padding
+  zone (= the border strip) is visible. No background override needed,
+  no ::after colour-fill hack, completely non-destructive.
+*/
+.btn-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--glow-width);
+  border-radius: inherit;
+
+  background: conic-gradient(
+    from var(--glow-angle) at 50% 50%,
+    transparent          0%,
+    transparent          55%,
+    var(--glow-primary)  65%,
+    var(--glow-secondary)72%,
+    var(--glow-accent)   80%,
+    var(--glow-primary)  87%,
+    transparent          95%,
+    transparent          100%
+  );
+
+  /* Mask away the content box → only the padding ring is painted */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+
+  animation: glow-spin var(--glow-speed) linear infinite;
+
+  /* Sit below the button's own background but above its parent */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ── Soft ambient outer glow (depth layer) ──────────── */
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--glow-width) * -2);
+  border-radius: inherit;
+  background: transparent;
+  box-shadow:
+    0 0 var(--glow-blur) calc(var(--glow-width))
+      color-mix(in srgb, var(--glow-primary) 40%, transparent);
+  animation: glow-breathe calc(var(--glow-speed) * 0.9) ease-in-out infinite;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* ── Keyframes ──────────────────────────────────────── */
+@keyframes glow-spin {
+  to { --glow-angle: 360deg; }
+}
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1;   }
+}
+
+/* ── Pause on hover so the glow "holds" ─────────────── */
+.btn-glow:hover::before,
+.btn-glow:hover::after {
+  animation-play-state: paused;
+  /* …and boost the ambient glow on hover for tactile feedback */
+}
+
+.btn-glow:hover::after {
+  box-shadow:
+    0 0 calc(var(--glow-blur) * 2) calc(var(--glow-width) * 2)
+      color-mix(in srgb, var(--glow-primary) 60%, transparent);
+  transition: box-shadow 0.25s ease;
+}
+
+/* ── Per-variant colour overrides ───────────────────── */
+
+/* Primary blue button — inherits defaults, optionally tighten */
+.btn-primary2.btn-glow {
+  --glow-primary:   #2a9cfa;
+  --glow-secondary: #7dd3fc;
+  --glow-accent:    #1d4ed8;
+}
+
+/* Secondary / outline button — shift to a softer, cooler tone */
+.btn-secondary.btn-glow {
+  --glow-primary:   #60a5fa;
+  --glow-secondary: #bfdbfe;
+  --glow-accent:    #3b82f6;
+  --glow-blur:      6px;
+}
+
+/* ── Fallback: browsers without @property (Firefox < 128) ── */
+/*
+  @property is supported in Chrome 85+, Safari 16.4+, Firefox 128+.
+  For the small minority that miss it, the conic-gradient still renders
+  but won't rotate (it stays static at 0°).  The breathe pulse on
+  ::after still fires and provides visual feedback.
+  If you need a fully-animated fallback, uncomment the block below:
+*/
+
+/*
+@supports not (background: conic-gradient(from 1deg, red, blue)) {
+  .btn-glow::before { display: none; }
+  .btn-glow {
+    animation: glow-box-fallback 2.5s ease-in-out infinite;
+  }
+  @keyframes glow-box-fallback {
+    0%, 100% {
+      box-shadow:
+        0 0 0 1px rgba(42, 156, 250, 0.45),
+        0 0 10px rgba(42, 156, 250, 0.3);
+    }
+    50% {
+      box-shadow:
+        0 0 0 2px rgba(42, 156, 250, 0.75),
+        0 0 18px rgba(42, 156, 250, 0.55);
+    }
+  }
+}
+*/
+
+/* ── Accessibility: reduce motion ───────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .btn-glow::before {
+    animation: none;
+    /* Keep a static glow ring at its most-visible frame */
+    background: conic-gradient(
+      from 270deg at 50% 50%,
+      transparent          0%,
+      var(--glow-primary)  65%,
+      var(--glow-secondary)72%,
+      var(--glow-accent)   80%,
+      transparent          95%
+    );
+  }
+  .btn-glow::after {
+    animation: none;
+    opacity: 0.6;
+  }
+}

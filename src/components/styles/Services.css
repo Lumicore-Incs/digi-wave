@@ -1,8 +1,9 @@
-/* Services Component Styles */
+/* Ensure section handles background properly */
 .services-section {
   position: relative;
   background: #eeeeeeaf;
   padding: 4rem 0 3rem 0;
+  overflow: hidden; /* important */
   z-index: 1;
 }
 
@@ -73,7 +74,8 @@
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 70, 182, 0.08);
+   border: 1px solid rgba(91, 136, 207, 0.28);
+  box-shadow: 0px 5px 10px 0px rgba(134, 198, 235, 0.918);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -96,7 +98,7 @@
   transform: translateY(-8px);
   box-shadow: 0 12px 32px rgba(0, 70, 182, 0.15);
   border-color: rgba(0, 70, 182, 0.2);
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  background: linear-gradient(135deg, #bbdbe7e6 0%, #c9e4ede6 100%);
 }
 
 .service-card:hover::before {
@@ -155,8 +157,86 @@
   color: #666;
   line-height: 1.7;
   transition: color 0.3s ease;
-}
+  }
 
 .service-card:hover .service-description {
   color: #444;
+  }
+
+/* ========================= */
+/* Ripple Background Styling */
+/* ========================= */
+
+.ripple-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Base ripple classes */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: #0046b6;
+  opacity: 0.08;
+  animation: ripple 20s infinite ease-in-out;
+}
+
+/*Sizes*/
+.circle.small { width: 250px; height: 250px; }
+.circle.medium { width: 450px; height: 450px; }
+.circle.large { width: 650px; height: 650px; }
+.circle.xlarge { width: 850px; height: 850px; }
+.circle.xxlarge { width: 1050px; height: 1050px; }
+
+/* Positioning for TOP-LEFT ripples */
+.circle.small { top: -125px; left: -125px; }
+.circle.medium { top: -225px; left: -225px; }
+.circle.large { top: -325px; left: -325px; }
+.circle.xlarge { top: -425px; left: -425px; }
+.circle.xxlarge { top: -525px; left: -525px; }
+
+/* Shade variations for top-left */
+.circle.shade1 { opacity: 0.05; }
+.circle.shade2 { opacity: 0.07; }
+.circle.shade3 { opacity: 0.09; }
+.circle.shade4 { opacity: 0.11; }
+.circle.shade5 { opacity: 0.13; }
+
+/* Opposite ripple classes (BOTTOM-RIGHT) */
+.circle-opp {
+  position: absolute;
+  border-radius: 50%;
+  background: #0046b6;
+  opacity: 0.08;
+  animation: ripple 20s infinite ease-in-out;
+}
+
+/* Sizes */
+.circle-opp.small { width: 250px; height: 250px; }
+.circle-opp.medium { width: 450px; height: 450px; }
+.circle-opp.large { width: 650px; height: 650px; }
+.circle-opp.xlarge { width: 850px; height: 850px; }
+.circle-opp.xxlarge { width: 1050px; height: 1050px; }
+
+/* Positioning for BOTTOM-RIGHT ripples */
+.circle-opp.small { bottom: -125px; right: -125px; }
+.circle-opp.medium { bottom: -225px; right: -225px; }
+.circle-opp.large { bottom: -325px; right: -325px; }
+.circle-opp.xlarge { bottom: -425px; right: -425px; }
+.circle-opp.xxlarge { bottom: -525px; right: -525px; }
+
+/* Shade variations for bottom-right */
+.circle-opp.shade1 { opacity: 0.05; }
+.circle-opp.shade2 { opacity: 0.07; }
+.circle-opp.shade3 { opacity: 0.09; }
+.circle-opp.shade4 { opacity: 0.11; }
+.circle-opp.shade5 { opacity: 0.13; }
+
+/* Animation */
+@keyframes ripple {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(0.8); }
 }

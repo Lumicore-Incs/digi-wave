@@ -6,6 +6,7 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import { Toast } from 'primereact/toast';
 import { Dialog } from 'primereact/dialog';
 import { useRef } from 'react';
+import NetworkBackground from '../NetworkBackground';
 import './styles/QuoteForm.css';
 
 export default function QuoteForm() {
@@ -85,6 +86,8 @@ export default function QuoteForm() {
 
   return (
     <section className="quote-form-section">
+      {/* Particle canvas background */}
+      <NetworkBackground />
       <div className="quote-form-container">
         <div className="quote-form-left">
           <div className="footer-bg" />
@@ -125,17 +128,20 @@ export default function QuoteForm() {
             </div>
 
             <div className="social-icons" data-aos="fade-up" data-aos-delay="400">
-              <a href="#" className="social-icon" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61580452866043" className="social-icon" aria-label="Facebook">
                 <i className="pi pi-facebook"></i>
               </a>
-              <a href="#" className="social-icon" aria-label="Twitter">
+              <a href="" className="social-icon" aria-label="Twitter">
                 <i className="pi pi-twitter"></i>
               </a>
-              <a href="#" className="social-icon" aria-label="LinkedIn">
+              <a href="" className="social-icon" aria-label="LinkedIn">
                 <i className="pi pi-linkedin"></i>
               </a>
-              <a href="#" className="social-icon" aria-label="Instagram">
+              <a href="" className="social-icon" aria-label="Instagram">
                 <i className="pi pi-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@wickramanayake" className="social-icon" aria-label="youtube">
+                <i className="pi pi-youtube"></i>
               </a>
             </div>
           </div>
@@ -211,7 +217,7 @@ export default function QuoteForm() {
             {!loading && (
               <Button
                 label="Send"
-                className="form-submit-btn"
+                className="btn btn-primary2 btn-glow"
                 type="submit"
                 data-aos="fade-up"
                 data-aos-delay="700"

@@ -4,6 +4,9 @@
 @import 'primeicons/primeicons.css';
 @import 'primeflex/primeflex.css';
 
+/* Import Custom FM Font (Abhaya Libre) */
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+
 /* Design System Variables */
 :root {
   /* Colors - Primary (Brand Blue) */
@@ -187,6 +190,11 @@ p, .text-muted {
   box-shadow: var(--shadow-md);
 }
 
+.btn-primary2 {
+  background: #2a9cfa;
+  color: #fff;
+}
+
 .btn-secondary {
   background-color: transparent;
   color: #ffffff;
@@ -198,6 +206,10 @@ p, .text-muted {
   transform: translateY(-1px);
   background-color: transparent !important;
   border: 2px solid #ffffff !important;
+}
+
+.btn-secondary.btn-glow:hover {
+  border-color: transparent !important;
 }
 
 .btn-large {
@@ -380,4 +392,81 @@ img[data-loading='false'] {
 .p-inputtext:focus {
   border-color: var(--primary-500) !important;
   box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1) !important;
+}
+
+/* ========== REUSABLE ANIMATED GLOW BUTTON ========== */
+.btn-glow {
+  position: relative;
+  z-index: 0;
+  /* Keep original border for non-glow fallbacks, but set to transparent when glow is active */
+  border: 2px solid transparent !important;
+  background-clip: padding-box !important;
+  overflow: visible !important; /* Ensure glow isn't clipped */
+}
+
+/* Sharp animated border layer */
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px; /* Thickness of the glowing border */
+  background: linear-gradient(
+    90deg,
+    #00f0ff,
+    #2a9cfa,
+    #0046b6,
+    #7e57c2,
+    #00f0ff
+  );
+  background-size: 300% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: btn-glow-bg-pan 3s linear infinite;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+/* Blurred ambient glow layer */
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #00f0ff,
+    #2a9cfa,
+    #0046b6,
+    #7e57c2,
+    #00f0ff
+  );
+  background-size: 300% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: btn-glow-bg-pan 3s linear infinite;
+  filter: blur(8px);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.btn-glow:hover::after {
+  opacity: 0.7;
+}
+
+/* Ensure child elements (like labels) stay above the glow */
+.btn-glow > * {
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes btn-glow-bg-pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 300% 0%; }
 }

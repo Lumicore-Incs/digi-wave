@@ -6,6 +6,7 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import { Toast } from 'primereact/toast';
 import { Dialog } from 'primereact/dialog';
 import { useRef } from 'react';
+import NetworkBackground from '../NetworkBackground';
 import './styles/ContactForm.css';
 
 export default function ContactForm() {
@@ -84,6 +85,8 @@ export default function ContactForm() {
   };
   return (
     <section className="contact-form-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic" data-aos-once="true">
+      {/* Particle canvas background */}
+      <NetworkBackground />
       <div className="contact-intro">
         <div className="contact-intro-headlines">
           <div className="headline-bg">We&apos;re Here to Help</div>
@@ -135,7 +138,7 @@ export default function ContactForm() {
             </div>
 
             <div className="contact-social-icons" data-aos="fade-up" data-aos-duration="800" data-aos-delay="900">
-              <a href="#" className="contact-social-icon" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61580452866043" className="contact-social-icon" aria-label="Facebook">
                 <i className="pi pi-facebook"></i>
               </a>
               <a href="#" className="contact-social-icon" aria-label="Twitter">
@@ -147,6 +150,9 @@ export default function ContactForm() {
               <a href="#" className="contact-social-icon" aria-label="Instagram">
                 <i className="pi pi-instagram"></i>
               </a>
+              <a href="https://www.youtube.com/@wickramanayake" className="contact-social-icon" aria-label="youtube">
+                <i className="pi pi-youtube"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -154,7 +160,7 @@ export default function ContactForm() {
         <div className="contact-form-section-right">
           <div className="contact-intro-headlines" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div className="headline-bg">Contact Us</div>
-            <div className="headline-fg text-left">Contact Us</div>
+            <div className="headline-fg">Contact Us</div>
           </div>
           <h2 className="contact-form-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
             Get Your <span className="text-blue">Free Quote</span> Today
@@ -220,7 +226,7 @@ export default function ContactForm() {
 
             <Button 
               label={loading ? "Sending..." : "Send"} 
-              className="contact-form-submit-btn"
+              className="btn btn-primary2 btn-glow"
               type="submit"
               disabled={loading}
               loading={loading}

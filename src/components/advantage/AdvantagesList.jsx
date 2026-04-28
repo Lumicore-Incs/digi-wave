@@ -1,6 +1,28 @@
 'use client';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 import './styles/AdvantagesList.css';
+
+/* ── Advantage image with fade transition ── */
+function AdvantageImage({ src, alt }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={`advantage-image img-reveal${visible ? ' img-reveal--visible' : ''}`}>
+      <Image src={src} alt={alt} width={500} height={350} className="advantage-img" />
+    </div>
+  );
+}
 
 export default function AdvantagesList() {
   const advantages = [
@@ -76,7 +98,7 @@ export default function AdvantagesList() {
           >
             <div className="advantage-content">
               <div className="flex align-items-center gap-3">
-                <div 
+                <div
                   className={`advantage-icon-wrapper bg-${advantage.color}`}
                   data-aos="zoom-in"
                   data-aos-duration="800"
@@ -89,17 +111,11 @@ export default function AdvantagesList() {
               <p className="advantage-description">{advantage.description}</p>
             </div>
 
-            <div className="advantage-image">
-              <Image
-                src={advantage.image}
-                alt={advantage.title}
-                width={500}
-                height={350}
-                className="advantage-img"
-                sizes="(max-width: 1024px) 100vw, 500px"
-              />
-            </div>
-          </div>
+            <AdvantageImage 
+              src={advantage.image} 
+              alt={advantage.title} 
+            />
+Digital Transformation          </div>
         ))}
       </div>
     </section>

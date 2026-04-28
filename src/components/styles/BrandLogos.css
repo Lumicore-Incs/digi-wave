@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 32px auto;
+  margin: 0 auto 0 auto;
 }
 .brand-logos-bg {
   width: 100%;
@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 0;
+  padding: 8px 0;
 }
 .brand-logo-item {
   display: inline-flex;
@@ -68,5 +68,11 @@
 @media (prefers-reduced-motion: reduce) {
   .brand-logos-inner {
     animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-logos-bg {
+    padding: 0;
   }
 }

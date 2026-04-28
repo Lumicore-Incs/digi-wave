@@ -1,7 +1,9 @@
 'use client';
 import Image from 'next/image';
 import { OrganizationChart } from 'primereact/organizationchart';
+import NetworkBackground from '../NetworkBackground';
 import './styles/CompanyNetwork.css';
+
 
 export default function CompanyNetwork() {
   const data = [
@@ -78,16 +80,11 @@ export default function CompanyNetwork() {
           <div className="division-node-content">
             <ul className="division-list">
               {node.data.items.map((item, index) => (
-                <li key={index} data-aos="fade-left" data-aos-delay={300 + (index * 100)} data-aos-duration="600">
+                <li key={index} data-aos="fade-left" data-aos-delay={300 + index * 100} data-aos-duration="600">
                   {typeof item === 'object' ? (
                     <>
                       <span className="item-icon">
-                        <Image
-                          src={item.icon}
-                          alt={item.name}
-                          width={24}
-                          height={24}
-                        />
+                        <Image src={item.icon} alt={item.name} width={24} height={24} />
                       </span>
                       <span className="item-name">{item.name}</span>
                     </>
@@ -107,6 +104,9 @@ export default function CompanyNetwork() {
 
   return (
     <section className="company-network-section" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+      {/* Particle canvas background */}
+      <NetworkBackground />
+
       <div className="company-network-container">
         <div className="network-subtitle-headline" data-aos="fade-down" data-aos-duration="800">
           <div className="headline-bg">Wickramanayake Holdings</div>

@@ -7,7 +7,7 @@ const [PI_DOUBLE, PI_HALF, PI_QUARTER] = [Math.PI * 2, Math.PI / 2, Math.PI / 4]
 const COLOR_MAX = 255;
 const BASE_COLOR = [1, 0.1, 0.2];
 
-const getRGB = () => `rgba(216, 254, 42, 1)`;
+const getRGB = () => `rgba(253, 253, 253, 1)`;
 
 class Vector {
   constructor(x = 0, y = 0) {
