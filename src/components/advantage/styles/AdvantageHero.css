@@ -98,7 +98,7 @@
 @media (max-width: 768px) {
   .advantage-hero-title {
     font-size: 2rem;
-    font-family: 'Avenir', sans-serif;
+    font-family: 'Avenir';
   }
 
   .advantage-hero-subtitle {

@@ -136,7 +136,7 @@
 @media (max-width: 768px) {
   .work-hero-title {
     font-size: 2rem;
-    font-family: 'Avenir', sans-serif !important;
+    font-family: 'Avenir'!important;
   }
 
   .work-hero-subtitle {

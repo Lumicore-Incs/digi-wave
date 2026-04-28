@@ -130,7 +130,7 @@
 
 @media (max-width: 768px) {
   .contact-hero-title {
-    font-family: 'Avenir', sans-serif !important;
+    font-family: 'Avenir'!important;
   }
 
   .contact-hero-subtitle {
