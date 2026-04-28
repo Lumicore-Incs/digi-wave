@@ -160,7 +160,7 @@ export default function ContactForm() {
         <div className="contact-form-section-right">
           <div className="contact-intro-headlines" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div className="headline-bg">Contact Us</div>
-            <div className="headline-fg text-left">Contact Us</div>
+            <div className="headline-fg">Contact Us</div>
           </div>
           <h2 className="contact-form-title" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
             Get Your <span className="text-blue">Free Quote</span> Today

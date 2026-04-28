@@ -113,6 +113,13 @@
 
 .contact-intro-headlines {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form-section-right .contact-intro-headlines {
+  align-items: flex-start;
 }
 
 .contact-form-title {
@@ -167,36 +174,108 @@
 
 
 
+@media (max-width: 1024px) {
+  .contact-form-container {
+    gap: 2rem;
+    padding: 4rem 2rem;
+  }
+}
+
 @media (max-width: 968px) {
+  .contact-form-section {
+    padding: 4rem 0;
+  }
+
   .contact-form-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-info-section {
+    justify-content: center;
+  }
+
+  .contact-info-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-social-icons {
+    justify-content: center;
   }
 
   .contact-form-row {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .contact-info-card {
-    padding: 30px;
+  .contact-form-title {
+    font-size: 2rem;
+    text-align: center;
   }
 
-  .contact-intro-text {
-    font-size: 1rem;
+  .contact-intro-headlines,
+  .contact-form-section-right .contact-intro-headlines {
+    align-items: center;
+  }
+
+  .contact-intro-headlines .headline-fg {
+    text-align: center;
   }
 }
 
 @media (max-width: 768px) {
   .contact-form-section {
-    padding: 60px 5%;
+    padding: 3rem 0;
+  }
+
+  .contact-intro {
+    padding: 0 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .contact-intro-text {
+    font-size: 0.95rem;
   }
 
   .contact-form-title {
     font-size: 1.75rem;
   }
 
-  .contact-info-title {
-    font-size: 1.75rem;
+  .headline-bg {
+    font-size: 2.2rem;
+    top: -1rem;
+  }
+
+  .headline-fg {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 2rem 1rem;
+  }
+
+  .contact-info-card {
+    padding: 1.5rem;
+  }
+
+  .contact-form-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-social-icons {
+    gap: 10px;
+  }
+
+  .contact-social-icon {
+    width: 35px;
+    height: 35px;
   }
 }
 /* Modal Styles */
