@@ -18,12 +18,12 @@
   align-items: center;
   padding: 14px 20px;
   background: transparent;
-  pointer-events: none;           /* let clicks pass through the empty area */
+  pointer-events: none; /* let clicks pass through the empty area */
 }
 
 /* ── Pill container ── */
 .header-content {
-  pointer-events: all;            /* restore clicks on the pill */
+  pointer-events: all; /* restore clicks on the pill */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,29 +33,30 @@
   height: 54px;
   padding: 0 8px 0 16px;
 
-  background: rgba(2, 1, 1, 1);
+  background: rgba(8, 12, 42, 0.62);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 100px;           /* full pill shape */
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 100px; /* full pill shape */
 
   box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.25),
-    0 1px 0 rgba(255, 255, 255, 0.12) inset,
-    0 -1px 0 rgba(0, 0, 0, 0.15) inset;
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.12) inset;
 
   font-family: 'Avenir';
-  transition: box-shadow 0.3s ease, background 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .header-content:hover {
-  background: rgba(70, 162, 237, 0.82);
-  color: #080808;
+  border-color: rgba(255, 255, 255, 0.22);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.30),
-    0 1px 0 rgba(255, 255, 255, 0.16) inset,
-    0 -1px 0 rgba(0, 0, 0, 0.15) inset;
+    0 8px 32px rgba(0, 0, 0, 0.36),
+    0 1px 0 rgba(255, 255, 255, 0.14) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.12) inset;
 }
 
 /* ── Logo ── */
@@ -169,7 +170,7 @@
   text-decoration: none;
 
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.10),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
     0 2px 12px rgba(0, 0, 0, 0.35);
 
   transition:
@@ -181,8 +182,8 @@
 .header-cta:hover {
   background: rgba(20, 20, 20, 0.95);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.18),
-    0 4px 20px rgba(0, 0, 0, 0.50);
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 4px 20px rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
 
@@ -213,7 +214,7 @@
 .mobile-menu-btn {
   display: none;
   border: none;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
   padding: 0;
   cursor: pointer;
   width: 36px;
@@ -223,7 +224,7 @@
   justify-content: center;
   color: rgba(255, 255, 255, 0.85);
   transition: all 0.25s ease;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   flex-shrink: 0;
 }
 
@@ -279,7 +280,7 @@
     -webkit-backdrop-filter: blur(24px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 20px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.40);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 
     animation: slideDown 0.25s ease;
   }
@@ -295,7 +296,7 @@
   }
 
   .nav-menu.mobile-open .nav-link:hover {
-    background: rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
   }
 
@@ -320,7 +321,7 @@
    ============================================================ */
 @media (max-width: 420px) {
   .header-cta {
-    display: none;        /* hide CTA on very small screens to save space */
+    display: none; /* hide CTA on very small screens to save space */
   }
 
   .header-content {
@@ -348,8 +349,20 @@
 }
 
 @keyframes navItemEmerge {
-  0%   { transform: translateY(0);     opacity: 1; }
-  30%  { transform: translateY(-12px); opacity: 0; }
-  50%  { transform: translateY(14px);  opacity: 0; }
-  100% { transform: translateY(0);     opacity: 1; }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
