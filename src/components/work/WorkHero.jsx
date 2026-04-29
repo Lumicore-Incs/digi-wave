@@ -2,7 +2,7 @@
 import './styles/WorkHero.css';
 
 export default function WorkHero() {
-  const title = "Our Work Speaks Volumes.";
+  const title = "Our Work Speaks Volumes";
 
   const renderTitle = () => {
     let charCount = 0;

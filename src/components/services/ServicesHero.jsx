@@ -2,7 +2,7 @@
 import './styles/ServicesHero.css';
 
 export default function ServicesHero() {
-  const title = "Amplify Your Brand. Ignite Your Growth.";
+  const title = "Amplify Your Brand. Ignite Your Growth";
 
   const renderTitle = () => {
     let charCount = 0;
