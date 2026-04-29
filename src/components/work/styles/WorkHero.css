@@ -77,9 +77,10 @@
 }
 
 .work-hero-title {
+  font-family: 'Avenir';
   font-size: 3rem;
   font-weight: 700;
-  margin-top: 3rem;
+  margin-bottom: 1rem;
   color: white;
   position: relative;
   display: inline-block;

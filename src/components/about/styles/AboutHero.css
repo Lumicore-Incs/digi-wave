@@ -65,6 +65,7 @@
 
 .about-hero-title {
   font-size: var(--font-size-display);
+  font-family: 'Avenir';
   font-weight: 700;
   font-size: 3rem;
   color: white;

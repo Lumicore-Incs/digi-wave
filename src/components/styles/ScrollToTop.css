@@ -1,0 +1,98 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: smoothDrop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  background: #1ebe5d;
+}
+
+.whatsapp-btn:active {
+  transform: translateY(-2px);
+}
+
+/* ===== SCROLL BUTTON ===== */
+.scroll-btn {
+  background: rgba(216, 254, 42, 1);
+  color: #000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(216, 254, 42, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(8px);
+  animation: smoothDrop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
+}
+
+.scroll-btn:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(216, 254, 42, 0.6);
+  background: rgba(226, 255, 82, 1);
+}
+
+.scroll-btn:active {
+  transform: translateY(-2px);
+}
+
+/* ===== SMOOTH DROP ANIMATION ===== */
+@keyframes smoothDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-120px);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-btn,
+  .scroll-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .whatsapp-btn svg,
+  .scroll-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
