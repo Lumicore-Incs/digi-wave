@@ -1,9 +1,9 @@
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import AOSInit from '../components/AOSInit';
 import ScrollToTop from '../components/ScrollToTop';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Digi Wave',
@@ -18,7 +18,8 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/favicon.png" type="image/png" />
       </head>
-      <body className={inter.className}>
+      {/* <body className={inter.className}> */}
+        <body>
         <AOSInit />
         {children}
         <ScrollToTop />
