@@ -77,10 +77,10 @@
 
 .hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
+  font-family: 'Avenir';
   line-height: 1.7;
   color: #d3eafe;
   font-style: italic;
-  margin: 1.5rem 0 0.5rem 0;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
   animation: fadeInUp 0.8s ease-out 0.3s both;
   text-wrap: pretty;
@@ -132,11 +132,13 @@
   .hero-content {
     text-align: center;
     padding-bottom: 4rem;
+    font-family: 'Avenir'!important;
   }
 
   .hero-title {
     margin-bottom: 0.5rem;
     text-align: center;
+    font-family: 'Avenir'!important;
   }
 
   .hero-subtitle {
@@ -165,6 +167,7 @@
 
   .hero-title {
     font-size: 2.5rem;
+    font-family: 'Avenir'!important;
   }
 
   .hero-subtitle {

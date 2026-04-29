@@ -122,6 +122,7 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.95);
   text-wrap: pretty;
+  font-family: 'Avenir';
 }
 
 @media (max-width: 768px) {
