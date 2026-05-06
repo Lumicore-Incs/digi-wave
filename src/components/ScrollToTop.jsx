@@ -1,9 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import VideoPlaylist from '@/components/about/VideoPlaylist';
 import './styles/ScrollToTop.css';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [isInAdvantageSection, setIsInAdvantageSection] = useState(false);
 
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {
@@ -29,10 +32,44 @@ const ScrollToTop = () => {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
+  // Hide youtube-btn when OurAdvantage section (with its own player) is in view
+  useEffect(() => {
+    const section = document.querySelector('.our-advantage-section');
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInAdvantageSection(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="scroll-to-top">
+      {isVideoVisible && <VideoPlaylist onClose={() => setIsVideoVisible(false)} />}
       {isVisible && (
         <>
+          {!isInAdvantageSection && (
+            <div
+              onClick={() => setIsVideoVisible(!isVideoVisible)}
+              className="youtube-btn"
+              aria-label="Toggle Video Player"
+            >
+              {/* YouTube logo icon */}
+              <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M27.4 3.14C27.07 1.9 26.1 0.93 24.86 0.6C22.68 0 14 0 14 0C14 0 5.32 0 3.14 0.6C1.9 0.93 0.93 1.9 0.6 3.14C0 5.32 0 10 0 10C0 10 0 14.68 0.6 16.86C0.93 18.1 1.9 19.07 3.14 19.4C5.32 20 14 20 14 20C14 20 22.68 20 24.86 19.4C26.1 19.07 27.07 18.1 27.4 16.86C28 14.68 28 10 28 10C28 10 28 5.32 27.4 3.14Z"
+                  fill="white"
+                  fillOpacity="0.15"
+                />
+                <path
+                  d="M11.2 14.28L18.48 10L11.2 5.72V14.28Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          )}
+
           <div
             onClick={openWhatsApp}
             className="whatsapp-btn"

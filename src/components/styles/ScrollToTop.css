@@ -9,6 +9,32 @@
   gap: 10px;
 }
 
+/* ===== YOUTUBE BUTTON ===== */
+.youtube-btn {
+  background: #FF0000;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: smoothDrop 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.youtube-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.6);
+  background: #cc0000;
+}
+
+.youtube-btn:active {
+  transform: translateY(-2px);
+}
+
 /* ===== WHATSAPP BUTTON ===== */
 .whatsapp-btn {
   background: #25D366;
@@ -84,15 +110,17 @@
     right: 20px;
   }
 
+  .youtube-btn,
   .whatsapp-btn,
   .scroll-btn {
     width: 45px;
     height: 45px;
   }
 
+  .youtube-btn svg,
   .whatsapp-btn svg,
   .scroll-btn svg {
     width: 20px;
-    height: 20px;
+    height: 16px;
   }
 }

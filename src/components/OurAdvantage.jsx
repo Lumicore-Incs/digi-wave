@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import VideoPlaylist from '@/components/about/VideoPlaylist';
 import './styles/OurAdvantage.css';
 
 const advantageSteps = [
@@ -54,7 +55,8 @@ export default function OurAdvantage() {
         <li></li>
       </ul>
 
-      <div className="our-advantage-content">
+      <div className="our-advantage-wrapper">
+        <div className="our-advantage-content">
         <div
           className="our-advantage-headline"
           data-aos="fade-left"
@@ -171,6 +173,12 @@ export default function OurAdvantage() {
               />
             </motion.div>
           </AnimatePresence>
+        </div>
+        </div>
+
+        {/* ── Video Player Layer – right side ── */}
+        <div className="our-advantage-video-layer">
+          <VideoPlaylist inline />
         </div>
       </div>
     </section>

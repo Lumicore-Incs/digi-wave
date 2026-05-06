@@ -1,10 +1,6 @@
 /* ============================================================
-   Header — Premium Pill / Floating Bar  (Apple / Spark & Co. inspired)
-   Navigation content is UNCHANGED — only visual design updated
+   Header — Premium Pill / Floating Bar
    ============================================================ */
-
-/* ── Google Font ── */
-/* Font import removed to switch to Avenir */
 
 /* ── Floating wrapper ── */
 .header {
@@ -18,12 +14,12 @@
   align-items: center;
   padding: 14px 20px;
   background: transparent;
-  pointer-events: none; /* let clicks pass through the empty area */
+  pointer-events: none;
 }
 
 /* ── Pill container ── */
 .header-content {
-  pointer-events: all; /* restore clicks on the pill */
+  pointer-events: all;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +34,7 @@
   -webkit-backdrop-filter: blur(20px) saturate(160%);
 
   border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 100px; /* full pill shape */
+  border-radius: 100px;
 
   box-shadow:
     0 4px 24px rgba(0, 0, 0, 0.3),
@@ -111,7 +107,6 @@
   transform: translateY(-1px);
 }
 
-/* Active pill highlight */
 .nav-link.active {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.16);
@@ -119,7 +114,6 @@
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 
-/* Subtle underline indicator for active */
 .nav-link.active::after {
   content: '';
   position: absolute;
@@ -145,10 +139,7 @@
   background: rgba(100, 255, 180, 0.4);
 }
 
-/* ── "Let's talk" / CTA button (re-used as mobile menu btn on desktop) ── */
-/* The existing mobile-menu-btn is repurposed for mobile only */
-
-/* ── CTA Button — right side ── */
+/* ── CTA Button ── */
 .header-cta {
   display: inline-flex;
   align-items: center;
@@ -189,23 +180,96 @@
   transform: translateY(0px) scale(0.97);
 }
 
-/* Arrow icon inside CTA */
 .header-cta-arrow {
   font-size: 15px;
   transition: transform 0.22s ease;
   display: inline-block;
 }
+
 .header-cta:hover .header-cta-arrow {
   transform: translateX(3px);
 }
 
-/* ── Divider between nav and CTA ── */
+/* ── Divider ── */
 .header-divider {
   width: 1px;
   height: 22px;
   background: rgba(255, 255, 255, 0.15);
   margin: 0 10px;
   flex-shrink: 0;
+}
+
+/* ── Social Icons ── */
+.desktop-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mobile-social-bar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 0;
+  background: linear-gradient(180deg, rgba(8, 12, 42, 0.95) 0%, rgba(8, 12, 42, 0) 100%);
+  pointer-events: none;
+}
+
+.mobile-social-bar .social-icon-link {
+  pointer-events: all;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.social-icon-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.social-icon-link:hover {
+  color: #fff;
+  transform: translateY(-3px) scale(1.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Per-platform hover colors ── */
+.social-icon-link.facebook:hover {
+  background: #1877f2;
+  box-shadow: 0 5px 15px rgba(24, 119, 242, 0.5);
+  color: white;
+}
+
+.social-icon-link.tiktok:hover {
+  background: #010101;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.social-icon-link.youtube:hover {
+  background: #ff0000;
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+  color: white;
+}
+
+.social-icon-link.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  box-shadow: 0 5px 15px rgba(214, 36, 159, 0.5);
+  color: white;
 }
 
 /* ── Mobile menu button ── */
@@ -241,7 +305,7 @@
    ============================================================ */
 @media (max-width: 768px) {
   .header {
-    padding: 10px 14px;
+    padding: 44px 14px 10px 14px;
   }
 
   .header-content {
@@ -251,16 +315,22 @@
     position: relative;
   }
 
-  /* Hide desktop nav & divider */
   .nav-menu {
     display: none !important;
+  }
+
+  .desktop-social-icons {
+    display: none;
   }
 
   .header-divider {
     display: none;
   }
 
-  /* Mobile: slide-down drawer */
+  .mobile-social-bar {
+    display: flex;
+  }
+
   .nav-menu.mobile-open {
     display: flex !important;
     flex-direction: column;
@@ -307,7 +377,6 @@
     display: flex !important;
   }
 
-  /* Keep CTA button visible on mobile but smaller */
   .header-cta {
     padding: 7px 14px;
     font-size: 12.5px;
@@ -319,7 +388,7 @@
    ============================================================ */
 @media (max-width: 420px) {
   .header-cta {
-    display: none; /* hide CTA on very small screens to save space */
+    display: none;
   }
 
   .header-content {
@@ -328,7 +397,7 @@
 }
 
 /* ============================================================
-   SLIDE-DOWN ANIMATION
+   ANIMATIONS
    ============================================================ */
 @keyframes slideDown {
   from {
@@ -341,7 +410,6 @@
   }
 }
 
-/* ── Nav click animation — triggered via JS class toggle ── */
 .nav-click-anim {
   animation: navItemEmerge 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
